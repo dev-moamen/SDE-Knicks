@@ -1,1 +1,6 @@
-# SDE---Knicks
+# SDE-Knicks
+
+Team members:
+- Moamen Fahmy
+- 
+- 
