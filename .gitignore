@@ -1,16 +1,21 @@
-# Compiled class file
+# -------------------------------------------------
+# General Java / build artefacts
+# -------------------------------------------------
+# compiled class files
 *.class
 
-# Log file
+# Maven / Gradle output directories
+target/
+build/
+out/
+!.mvn/wrapper/maven-wrapper.jar   # keep the wrapper JAR if you use it
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Log files
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# JARs / distributions that are produced locally
 *.jar
 *.war
 *.nar
@@ -19,6 +24,60 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# IDE‑generated project files (will be regenerated locally)
+*.iml
+*.ipr
+*.iws
+.idea/
+.project
+.classpath
+.settings/
+.nbproject/
+nbbuild/
+nbdist/
+dist/
+nbactions.xml
+# NetBeans specific
+/.nb-gradle/
+
+# VS Code specific
+.vscode/
+history/
+
+# IntelliJ specific
+*.idea/
+# (keep the .gitignore inside .idea if you need it, already covered above)
+
+# OS‑specific files
+.DS_Store
+Thumbs.db
+
+# -------------------------------------------------
+# JavaFX specific artefacts
+# -------------------------------------------------
+# (JavaFX itself is fetched via Maven/Gradle, so nothing special to ignore,
+# but the following are common when you run the app locally)
+
+# Native modules produced by the javafx‑jlink goal
+jlink/
+image/
+# (directory created by `javafx:jlink` or `jlink` plugin)
+
+# Temporary files created by the JavaFX runtime
+*.tmp
+*.pid
+
+# -------------------------------------------------
+# Miscellaneous / personal files you probably don’t want to version
+# -------------------------------------------------
+# Maven wrapper scripts (keep them, but you can ignore the .bat/.sh if you wish)
+.mvn/wrapper/maven-wrapper.properties
+
+# Gradle wrapper (if you use Gradle)
+gradle/
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# End of file
