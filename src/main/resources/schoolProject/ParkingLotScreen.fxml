@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.ParkingLotScreenController">
+   <children>
+      <AnchorPane prefHeight="529.0" prefWidth="670.0">
+         <children>
+            <Rectangle fx:id="b3" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="396.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="a3" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="396.0" layoutY="114.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="b2" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="263.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="a2" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="263.0" layoutY="114.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="a4" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="526.0" layoutY="114.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="a1" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="131.0" layoutY="114.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="b4" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="526.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Rectangle fx:id="b1" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="131.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Text layoutX="167.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="562.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="432.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="299.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Text layoutX="51.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" wrappingWidth="29.76043701171875">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -16,6 +16,7 @@
                   <Font name="Javanese Text" size="70.0" />
                </font>
             </Label>
+            <Button fx:id="homeScreenBack" layoutX="-4.0" layoutY="-22.0" mnemonicParsing="false" onAction="#switchToIntroductionScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="77.0" prefWidth="630.0">
