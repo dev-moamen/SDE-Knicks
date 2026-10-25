@@ -15,7 +15,7 @@ public class HomeScreenController {
     private Button parkingLot;
 
     @FXML
-    private Button settings;
+    private Button myProfile;
 
     @FXML
     void switchToMyReservationsScreen(ActionEvent event) throws IOException {
@@ -28,8 +28,8 @@ public class HomeScreenController {
     }
 
     @FXML
-    void switchToSettingsScreen(ActionEvent event) throws IOException {
-        App.setRoot("Settings");
+    void switchToMyProfileScreen(ActionEvent event) throws IOException {
+        App.setRoot("MyProfile");
     }
 
 }
