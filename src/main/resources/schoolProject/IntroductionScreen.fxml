@@ -10,16 +10,20 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.PrimaryController">
    <children>
-      <VBox alignment="CENTER" prefHeight="535.0" prefWidth="671.0" spacing="20.0">
+      <VBox alignment="CENTER" layoutY="6.0" prefHeight="529.0" prefWidth="670.0" spacing="20.0">
          <children>
-            <Label prefHeight="135.0" prefWidth="218.0" text="PARKIFY">
-               <font>
-                  <Font name="Javanese Text" size="49.0" />
-               </font>
-            </Label>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="161.0" layoutY="-31.0" prefHeight="194.0" prefWidth="307.0" text="PARKIFY">
+                     <font>
+                        <Font name="Javanese Text" size="70.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <AnchorPane prefHeight="135.0" prefWidth="493.0">
                <children>
-                  <Button fx:id="getStarted" layoutX="190.0" layoutY="32.0" onAction="#switchToHomeScreen" prefHeight="72.0" prefWidth="251.0" text="Get Started!" textAlignment="CENTER">
+                  <Button fx:id="getStarted" layoutX="189.0" layoutY="29.0" onAction="#switchToHomeScreen" prefHeight="72.0" prefWidth="251.0" text="Get Started!" textAlignment="CENTER">
                      <font>
                         <Font size="37.0" />
                      </font>
