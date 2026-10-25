@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.MyProfileScreenController">
+   <children>
+      <AnchorPane prefHeight="69.0" prefWidth="630.0">
+         <children>
+            <Button fx:id="myProfileScreenBack" layoutX="-10.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToHomeScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
+            <Label layoutX="95.0" layoutY="-7.0" prefHeight="194.0" prefWidth="439.0" text="MY PROFILE">
+               <font>
+                  <Font name="Javanese Text" size="70.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="myCars" layoutX="154.0" layoutY="36.0" mnemonicParsing="false" onAction="#switchToMyCarsScreen" prefHeight="65.0" prefWidth="321.0" text="My Cars" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="paymentInformation" layoutX="154.0" layoutY="166.0" onAction="#switchToPaymentInformationScreen" prefHeight="65.0" prefWidth="321.0" text="Payment Information" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="77.0" prefWidth="630.0" />
+      <AnchorPane prefHeight="64.0" prefWidth="630.0" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
