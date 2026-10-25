@@ -20,7 +20,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="77.0" prefWidth="630.0">
          <children>
-            <Button fx:id="myReservations" layoutX="187.0" layoutY="-19.0" mnemonicParsing="false" onAction="#switchToMyReservationsScreen" text="My Reservations">
+            <Button fx:id="myProfile" layoutX="228.0" layoutY="-12.0" mnemonicParsing="false" onAction="#switchToMyProfileScreen" text="My Profile" textAlignment="CENTER">
                <font>
                   <Font size="30.0" />
                </font>
@@ -38,7 +38,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="57.0" prefWidth="630.0">
          <children>
-            <Button fx:id="settings" layoutX="242.0" layoutY="-9.0" mnemonicParsing="false" onAction="#switchToSettingsScreen" text="Settings" textAlignment="CENTER">
+            <Button fx:id="myReservations" layoutX="187.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToMyReservationsScreen" text="My Reservations">
                <font>
                   <Font size="30.0" />
                </font>
