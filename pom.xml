@@ -21,10 +21,15 @@
             <version>13</version>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>2.4.240</version>
-        </dependency>
+              <groupId>com.h2database</groupId>
+              <artifactId>h2</artifactId>
+              <version>1.4.199</version>
+            </dependency>
+        <dependency>
+              <groupId>org.hibernate</groupId>
+              <artifactId>hibernate-entitymanager</artifactId>
+              <version>5.4.4.Final</version>
+            </dependency>
     </dependencies>
     <build>
         <plugins>

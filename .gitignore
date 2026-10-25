@@ -4,6 +4,9 @@
 # compiled class files
 *.class
 
+# H2 Database
+data/
+
 # Maven / Gradle output directories
 target/
 build/
