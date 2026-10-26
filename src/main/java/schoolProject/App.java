@@ -35,7 +35,7 @@ public class App extends Application {
             throw new RuntimeException("Could not start H2 Console", e);
         }
 
-        scene = new Scene(loadFXML("IntroductionScreen"), 640, 480);
+        scene = new Scene(loadFXML("IntroductionScreen"), 800, 600);
         stage.setScene(scene);
         stage.show();
     }
