@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="800.0"
-           style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
-           xmlns="http://javafx.com/javafx/26"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="schoolProject.MyReservationsScreenController">
-    <children>
-        <VBox alignment="CENTER" spacing="20.0" prefHeight="800.0" prefWidth="800.0" pickOnBounds="false">
-            <padding>
-                <Insets top="80.0" right="40.0" bottom="40.0" left="40.0"/>
-            </padding>
+<BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.MyReservationsScreenController">
+    <top>
+        <HBox styleClass="header">
             <children>
-                <Label alignment="CENTER" text="MY RESERVATIONS" textFill="#f1f5f9">
-                    <font>
-                        <Font name="Lucida Fax Regular" size="32.0"/>
-                    </font>
-                </Label>
-                <TableView fx:id="reservationsTable"
-                           prefHeight="520.0"
-                           prefWidth="720.0"
-                           maxWidth="720.0"
-                           style="-fx-background-color: #1e293b; -fx-background-radius: 12; -fx-border-color: #475569; -fx-border-radius: 12; -fx-border-width: 1.5;">
+                <Button fx:id="myReservationsBack"
+                        mnemonicParsing="false"
+                        onAction="#switchToHomeScreen"
+                        styleClass="btn, btn-back"
+                        text="Back"/>
+                <Label alignment="CENTER" maxWidth="Infinity" styleClass="title" text="My Reservations"
+                       HBox.hgrow="ALWAYS"/>
+                <Region styleClass="header-spacer"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox styleClass="content">
+            <children>
+                <TableView fx:id="reservationsTable" prefHeight="560.0" prefWidth="720.0" maxWidth="720.0">
                     <columns>
                         <TableColumn prefWidth="145.0" text="Arrival Time"/>
                         <TableColumn prefWidth="155.0" text="Departure Time"/>
@@ -40,18 +41,5 @@
                 </TableView>
             </children>
         </VBox>
-
-        <Button fx:id="myReservationsBack"
-                mnemonicParsing="false"
-                onAction="#switchToHomeScreen"
-                prefHeight="43.0"
-                prefWidth="80.0"
-                style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;"
-                text="Back"
-                StackPane.alignment="TOP_LEFT">
-            <StackPane.margin>
-                <Insets top="20.0" left="20.0"/>
-            </StackPane.margin>
-        </Button>
-    </children>
-</StackPane>
+    </center>
+</BorderPane>

@@ -6,33 +6,25 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="800.0"
-           style="-fx-background-color: linear-gradient(to bottom, #1e3c72, #2a5298);"
+<StackPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
            xmlns="http://javafx.com/javafx/8"
            xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="schoolProject.IntroductionScreenController">
     <children>
-        <VBox alignment="CENTER" spacing="22.0" prefHeight="800.0" prefWidth="800.0">
+        <VBox alignment="CENTER" spacing="18.0" styleClass="content">
             <children>
-                <ImageView fitHeight="260.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="220.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@parkifyLogo.png"/>
                     </image>
                 </ImageView>
-                <Label style="-fx-text-fill: #cfe0ff;" text="Find parking, effortlessly">
-                    <font>
-                        <Font size="17.0"/>
-                    </font>
-                </Label>
+                <Label styleClass="subtitle" text="Find parking, effortlessly"/>
                 <Button fx:id="getStarted"
                         mnemonicParsing="false"
                         onAction="#switchToHomeScreen"
-                        prefHeight="58.0"
-                        prefWidth="240.0"
-                        style="-fx-background-color: #00c2a8; -fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold; -fx-background-radius: 30; -fx-cursor: hand;"
-                        text="Get Started!"/>
+                        styleClass="btn, btn-primary"
+                        text="Get Started"/>
             </children>
         </VBox>
     </children>

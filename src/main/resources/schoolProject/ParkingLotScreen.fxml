@@ -1,115 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="800.0"
-           style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
-           xmlns="http://javafx.com/javafx/26"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="schoolProject.ParkingLotScreenController">
-    <children>
-        <VBox alignment="CENTER" spacing="24.0" prefHeight="800.0" prefWidth="800.0" pickOnBounds="false">
+<BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.ParkingLotScreenController">
+    <top>
+        <HBox styleClass="header">
             <children>
-                <Label alignment="CENTER" text="PARKING LOT" textFill="#f1f5f9"
-                       style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+                <Button fx:id="parkingLotScreenBack"
+                        mnemonicParsing="false"
+                        onAction="#switchToHomeScreen"
+                        styleClass="btn, btn-back"
+                        text="Back"/>
+                <Label alignment="CENTER" maxWidth="Infinity" styleClass="title" text="Parking Lot"
+                       HBox.hgrow="ALWAYS"/>
+                <Region styleClass="header-spacer"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox styleClass="content">
+            <children>
+                <VBox styleClass="card">
+                    <children>
+                        <GridPane alignment="CENTER" hgap="22.0" vgap="18.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" minWidth="40.0"/>
+                                <ColumnConstraints halignment="CENTER" minWidth="90.0"/>
+                                <ColumnConstraints halignment="CENTER" minWidth="90.0"/>
+                                <ColumnConstraints halignment="CENTER" minWidth="90.0"/>
+                                <ColumnConstraints halignment="CENTER" minWidth="90.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints valignment="CENTER"/>
+                                <RowConstraints valignment="CENTER"/>
+                                <RowConstraints valignment="CENTER"/>
+                            </rowConstraints>
 
-                <GridPane alignment="CENTER" hgap="30.0" vgap="24.0">
-                    <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" minWidth="50.0"/>
-                        <ColumnConstraints halignment="CENTER" minWidth="102.0"/>
-                        <ColumnConstraints halignment="CENTER" minWidth="102.0"/>
-                        <ColumnConstraints halignment="CENTER" minWidth="102.0"/>
-                        <ColumnConstraints halignment="CENTER" minWidth="102.0"/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints valignment="CENTER"/>
-                        <RowConstraints valignment="CENTER"/>
-                        <RowConstraints valignment="CENTER"/>
-                    </rowConstraints>
+                            <Label styleClass="axis-label" text="1" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Label styleClass="axis-label" text="2" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                            <Label styleClass="axis-label" text="3" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                            <Label styleClass="axis-label" text="4" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
 
-                    <Label text="1" textFill="#f1f5f9" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
-                    <Label text="2" textFill="#f1f5f9" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
-                    <Label text="3" textFill="#f1f5f9" GridPane.columnIndex="3" GridPane.rowIndex="0">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
-                    <Label text="4" textFill="#f1f5f9" GridPane.columnIndex="4" GridPane.rowIndex="0">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
+                            <Label styleClass="axis-label" text="A" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Rectangle fx:id="a1" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Rectangle fx:id="a2" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                            <Rectangle fx:id="a3" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                            <Rectangle fx:id="a4" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="4" GridPane.rowIndex="1"/>
 
-                    <Label text="A" textFill="#f1f5f9" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
-                    <Rectangle fx:id="a1" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                    <Rectangle fx:id="a2" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                    <Rectangle fx:id="a3" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="3" GridPane.rowIndex="1"/>
-                    <Rectangle fx:id="a4" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="4" GridPane.rowIndex="1"/>
-
-                    <Label text="B" textFill="#f1f5f9" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                        <font>
-                            <Font size="40.0"/>
-                        </font>
-                    </Label>
-                    <Rectangle fx:id="b1" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                    <Rectangle fx:id="b2" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                    <Rectangle fx:id="b3" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="3" GridPane.rowIndex="2"/>
-                    <Rectangle fx:id="b4" arcHeight="12.0" arcWidth="12.0" fill="#22c55e"
-                               height="165.0" width="102.0" stroke="#86efac" strokeWidth="2.0"
-                               GridPane.columnIndex="4" GridPane.rowIndex="2"/>
-                </GridPane>
-
-                <Label alignment="CENTER" text="GREEN = AVAILABLE" textFill="#86efac"
-                       style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                            <Label styleClass="axis-label" text="B" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="b1" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="b2" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="b3" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="b4" styleClass="spot" arcHeight="14.0" arcWidth="14.0"
+                                       height="120.0" width="90.0"
+                                       GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+                        </GridPane>
+                        <Label styleClass="legend" text="Teal = available"/>
+                    </children>
+                </VBox>
             </children>
         </VBox>
-
-        <Button fx:id="parkingLotScreenBack"
-                mnemonicParsing="false"
-                onAction="#switchToHomeScreen"
-                prefHeight="43.0"
-                prefWidth="80.0"
-                style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;"
-                text="Back"
-                StackPane.alignment="TOP_LEFT">
-            <StackPane.margin>
-                <Insets top="20.0" left="20.0"/>
-            </StackPane.margin>
-        </Button>
-    </children>
-</StackPane>
+    </center>
+</BorderPane>

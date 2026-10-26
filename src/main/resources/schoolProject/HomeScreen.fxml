@@ -1,63 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="800.0"
-           style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
-           xmlns="http://javafx.com/javafx/26"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="schoolProject.HomeScreenController">
-    <children>
-        <VBox alignment="CENTER" spacing="24.0" prefHeight="800.0" prefWidth="800.0" pickOnBounds="false">
+<BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.HomeScreenController">
+    <top>
+        <HBox styleClass="header">
             <children>
-                <Label alignment="CENTER" text="PARKIFY" textFill="#f1f5f9">
-                    <font>
-                        <Font name="Javanese Text" size="70.0"/>
-                    </font>
-                </Label>
-                <Button fx:id="myProfile"
+                <Button fx:id="homeScreenBack"
                         mnemonicParsing="false"
-                        onAction="#switchToMyProfileScreen"
-                        prefHeight="65.0"
-                        prefWidth="321.0"
-                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);"
-                        text="My Profile"
-                        textAlignment="CENTER"/>
-                <Button fx:id="parkingLot"
-                        mnemonicParsing="false"
-                        onAction="#switchToParkingLotScreen"
-                        prefHeight="65.0"
-                        prefWidth="321.0"
-                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);"
-                        text="Parking Lot"
-                        textAlignment="CENTER"/>
-                <Button fx:id="myReservations"
-                        mnemonicParsing="false"
-                        onAction="#switchToMyReservationsScreen"
-                        prefHeight="65.0"
-                        prefWidth="321.0"
-                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);"
-                        text="My Reservations"
-                        textAlignment="CENTER"/>
+                        onAction="#switchToIntroductionScreen"
+                        styleClass="btn, btn-back"
+                        text="Back"/>
+                <Label alignment="CENTER" maxWidth="Infinity" styleClass="title" text="Parkify"
+                       HBox.hgrow="ALWAYS"/>
+                <Region styleClass="header-spacer"/>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox styleClass="content">
+            <children>
+                <VBox styleClass="card">
+                    <children>
+                        <Label styleClass="subtitle" text="What would you like to do?"/>
+                        <Button fx:id="myProfile"
+                                mnemonicParsing="false"
+                                onAction="#switchToMyProfileScreen"
+                                styleClass="btn, btn-nav"
+                                text="My Profile"/>
+                        <Button fx:id="parkingLot"
+                                mnemonicParsing="false"
+                                onAction="#switchToParkingLotScreen"
+                                styleClass="btn, btn-nav"
+                                text="Parking Lot"/>
+                        <Button fx:id="myReservations"
+                                mnemonicParsing="false"
+                                onAction="#switchToMyReservationsScreen"
+                                styleClass="btn, btn-nav"
+                                text="My Reservations"/>
+                    </children>
+                </VBox>
             </children>
         </VBox>
-
-        <Button fx:id="homeScreenBack"
-                mnemonicParsing="false"
-                onAction="#switchToIntroductionScreen"
-                prefHeight="43.0"
-                prefWidth="80.0"
-                style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;"
-                text="Back"
-                StackPane.alignment="TOP_LEFT">
-            <StackPane.margin>
-                <Insets top="20.0" left="20.0"/>
-            </StackPane.margin>
-        </Button>
-    </children>
-</StackPane>
+    </center>
+</BorderPane>

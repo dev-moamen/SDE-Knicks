@@ -35,9 +35,13 @@ public class App extends Application {
             throw new RuntimeException("Could not start H2 Console", e);
         }
 
-        scene = new Scene(loadFXML("IntroductionScreen"), 800, 600);
+        scene = new Scene(loadFXML("IntroductionScreen"), 800, 800);
+        scene.getStylesheets().add(
+                App.class.getResource("app.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Parkify");
+        stage.setMinWidth(800);
+        stage.setMinHeight(800);
         stage.show();
     }
 
