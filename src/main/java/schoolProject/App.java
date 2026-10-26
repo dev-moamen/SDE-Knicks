@@ -37,6 +37,7 @@ public class App extends Application {
 
         scene = new Scene(loadFXML("IntroductionScreen"), 800, 600);
         stage.setScene(scene);
+        stage.setTitle("Parkify");
         stage.show();
     }
 
