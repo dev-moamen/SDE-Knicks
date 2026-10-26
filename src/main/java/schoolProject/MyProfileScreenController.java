@@ -13,11 +13,11 @@ public class MyProfileScreenController {
 
     @FXML
     void switchToMyCarsScreen(ActionEvent event) throws IOException {
-        App.setRoot("MyCars");
+        App.setRoot("MyCarsScreen");
     }
 
     @FXML
     void switchToPaymentInformationScreen(ActionEvent event) throws IOException {
-        App.setRoot("PaymentInformation");
+        App.setRoot("PaymentInformationScreen");
     }
 }
