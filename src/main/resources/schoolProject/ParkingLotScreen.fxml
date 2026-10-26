@@ -1,66 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.shape.Rectangle?>
+        <?import javafx.scene.text.Font?>
+        <?import javafx.scene.text.Text?>
 
+<AnchorPane prefHeight="800.0" prefWidth="800.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.ParkingLotScreenController">
 
-<AnchorPane maxHeight="800.0" maxWidth="800.0" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.ParkingLotScreenController">
-   <children>
-      <VBox maxHeight="800.0" maxWidth="800.0" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="800.0">
-         <children>
-            <AnchorPane maxHeight="800.0" maxWidth="800.0" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="800.0">
-               <children>
-                  <Rectangle fx:id="b3" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="418.0" layoutY="332.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="a3" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="418.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="b2" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="285.0" layoutY="332.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="a2" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="285.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="a4" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="548.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="a1" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="153.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="b4" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="548.0" layoutY="332.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Rectangle fx:id="b1" arcHeight="5.0" arcWidth="5.0" fill="#22f272" height="165.0" layoutX="153.0" layoutY="332.0" stroke="BLACK" strokeType="INSIDE" width="102.0" />
-                  <Text layoutX="189.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="584.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="454.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="321.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="65.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="65.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" wrappingWidth="29.76043701171875">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="parkingLotScreenBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomeScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
-               </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-   </children>
+    <children>
+        <VBox alignment="CENTER" prefHeight="800.0" prefWidth="800.0"
+              spacing="15.0">
+            <children>
+                <AnchorPane prefHeight="800.0" prefWidth="800.0">
+                    <children>
+
+                        <Button fx:id="parkingLotScreenBack"
+                                layoutX="20.0" layoutY="20.0"
+                                mnemonicParsing="false"
+                                onAction="#switchToHomeScreen"
+                                prefHeight="43.0" prefWidth="80.0"
+                                text="Back"
+                                style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;" />
+
+                        <Label layoutX="235.0" layoutY="15.0"
+                               prefHeight="70.0" prefWidth="330.0"
+                               alignment="CENTER"
+                               text="PARKING LOT"
+                               textFill="#f1f5f9"
+                               style="-fx-font-size: 32px; -fx-font-weight: bold;" />
+
+                        <Text layoutX="189.0" layoutY="110.0" fill="#f1f5f9" text="1">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+                        <Text layoutX="321.0" layoutY="110.0" fill="#f1f5f9" text="2">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+                        <Text layoutX="454.0" layoutY="110.0" fill="#f1f5f9" text="3">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+                        <Text layoutX="584.0" layoutY="110.0" fill="#f1f5f9" text="4">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+
+                        <Text layoutX="65.0" layoutY="245.0" fill="#f1f5f9" text="A">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+                        <Text layoutX="65.0" layoutY="450.0" fill="#f1f5f9" text="B">
+                            <font><Font size="40.0"/></font>
+                        </Text>
+
+                        <Rectangle fx:id="a1" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="153.0" layoutY="145.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="a2" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="285.0" layoutY="145.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="a3" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="418.0" layoutY="145.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="a4" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="548.0" layoutY="145.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="b1" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="153.0" layoutY="350.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="b2" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="285.0" layoutY="350.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="b3" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="418.0" layoutY="350.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Rectangle fx:id="b4" arcHeight="12.0" arcWidth="12.0"
+                                   fill="#22c55e" height="165.0"
+                                   layoutX="548.0" layoutY="350.0" width="102.0"
+                                   stroke="#86efac" strokeWidth="2.0"/>
+
+                        <Label layoutX="230.0" layoutY="555.0"
+                               prefWidth="340.0" alignment="CENTER"
+                               text="GREEN = AVAILABLE"
+                               textFill="#86efac"
+                               style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

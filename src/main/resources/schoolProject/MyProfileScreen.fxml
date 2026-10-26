@@ -1,42 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.MyProfileScreenController">
-   <children>
-      <AnchorPane prefHeight="69.0" prefWidth="630.0">
-         <children>
-            <Button fx:id="myProfileScreenBack" layoutX="-10.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToHomeScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
-            <Label layoutX="95.0" layoutY="-7.0" prefHeight="194.0" prefWidth="439.0" text="MY PROFILE">
-               <font>
-                  <Font name="Javanese Text" size="70.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="myCars" layoutX="154.0" layoutY="36.0" mnemonicParsing="false" onAction="#switchToMyCarsScreen" prefHeight="65.0" prefWidth="321.0" text="My Cars" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button fx:id="paymentInformation" layoutX="154.0" layoutY="166.0" onAction="#switchToPaymentInformationScreen" prefHeight="65.0" prefWidth="321.0" text="Payment Information" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="77.0" prefWidth="630.0" />
-      <AnchorPane prefHeight="64.0" prefWidth="630.0" />
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
+<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="15.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="schoolProject.MyProfileScreenController">
+
+    <children>
+        <AnchorPane prefHeight="100.0" minHeight="100.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="myProfileScreenBack"
+                        layoutX="5.0" layoutY="10.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToHomeScreen"
+                        prefHeight="43.0" prefWidth="80.0"
+                        text="Back"
+                        style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;" />
+
+                <Label layoutX="105.0" layoutY="0.0"
+                       prefHeight="90.0" prefWidth="430.0"
+                       text="MY PROFILE"
+                       textFill="#f1f5f9"
+                       alignment="CENTER">
+                    <font>
+                        <Font name="Javanese Text" size="55.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="200.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="myCars"
+                        layoutX="154.0" layoutY="15.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToMyCarsScreen"
+                        prefHeight="65.0" prefWidth="321.0"
+                        text="My Cars" textAlignment="CENTER"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                </Button>
+
+                <Button fx:id="paymentInformation"
+                        layoutX="124.0" layoutY="105.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToPaymentInformationScreen"
+                        prefHeight="65.0" prefWidth="381.0"
+                        text="Payment Information" textAlignment="CENTER"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);">
+                    <font>
+                        <Font size="27.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+    </padding>
 </VBox>

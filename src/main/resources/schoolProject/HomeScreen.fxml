@@ -1,52 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.HomeScreenController">
+<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="20.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="schoolProject.HomeScreenController">
+
     <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-              <Label layoutX="159.0" layoutY="-30.0" prefHeight="194.0" prefWidth="311.0" text="PARKIFY">
-               <font>
-                  <Font name="Javanese Text" size="70.0" />
-               </font>
-            </Label>
-            <Button fx:id="homeScreenBack" layoutX="-4.0" layoutY="-22.0" mnemonicParsing="false" onAction="#switchToIntroductionScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="77.0" prefWidth="630.0">
-         <children>
-            <Button fx:id="myProfile" layoutX="186.0" layoutY="-19.0" mnemonicParsing="false" onAction="#switchToMyProfileScreen" prefHeight="65.0" prefWidth="257.0" text="My Profile" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="64.0" prefWidth="630.0">
-         <children>
-              <Button fx:id="parkingLot" layoutX="186.0" layoutY="-19.0" onAction="#switchToParkingLotScreen" prefHeight="65.0" prefWidth="257.0" text="Parking Lot" textAlignment="CENTER">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="57.0" prefWidth="630.0">
-         <children>
-            <Button fx:id="myReservations" layoutX="187.0" layoutY="-8.0" mnemonicParsing="false" onAction="#switchToMyReservationsScreen" text="My Reservations">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
+        <AnchorPane prefHeight="130.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="homeScreenBack"
+                        layoutX="0.0" layoutY="10.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToIntroductionScreen"
+                        prefHeight="43.0" prefWidth="75.0"
+                        text="Back"
+                        style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;" />
+
+                <Label layoutX="159.0" layoutY="0.0"
+                       prefHeight="100.0" prefWidth="311.0"
+                       text="PARKIFY"
+                       textFill="#f1f5f9">
+                    <font>
+                        <Font name="Javanese Text" size="70.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="77.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="myProfile"
+                        layoutX="154.0" layoutY="0.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToMyProfileScreen"
+                        prefHeight="65.0" prefWidth="321.0"
+                        text="My Profile"
+                        textAlignment="CENTER"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="77.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="parkingLot"
+                        layoutX="154.0" layoutY="0.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToParkingLotScreen"
+                        prefHeight="65.0" prefWidth="321.0"
+                        text="Parking Lot"
+                        textAlignment="CENTER"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="77.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="myReservations"
+                        layoutX="154.0" layoutY="0.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToMyReservationsScreen"
+                        prefHeight="65.0" prefWidth="321.0"
+                        text="My Reservations"
+                        textAlignment="CENTER"
+                        style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #60a5fa; -fx-border-width: 1.5; -fx-cursor: hand; -fx-font-size: 30px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.2, 0, 4);">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
     </children>
+
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>

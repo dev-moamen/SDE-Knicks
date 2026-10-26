@@ -1,72 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.control.TableColumn?>
+        <?import javafx.scene.control.TableView?>
+        <?import javafx.scene.control.TextField?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Font?>
+        <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.PaymentInformationScreenController">
-   <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Label layoutX="509.0" layoutY="-16.0" prefHeight="104.0" prefWidth="153.0" text="PARKIFY">
-               <font>
-                  <Font name="Javanese Text" size="34.0" />
-               </font>
-            </Label>
-            <Label layoutX="129.0" layoutY="47.0" prefHeight="70.0" prefWidth="412.0" text="Payment Information">
-               <font>
-                  <Font name="Lucida Fax Regular" size="38.0" />
-               </font>
-            </Label>
-            <Button fx:id="paymentInformationBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToMyProfileScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
-            <Text layoutX="84.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="cardNumberLoader" layoutX="45.0" layoutY="147.0" prefHeight="25.0" prefWidth="170.0" />
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <TableView layoutX="246.0" layoutY="-78.0" prefHeight="381.0" prefWidth="403.0">
-               <columns>
-                  <TableColumn fx:id="cardNumberEntry" prefWidth="169.0" text="Card Number" />
-                  <TableColumn fx:id="expirationEntry" prefWidth="64.0" text="Expiration" />
-                  <TableColumn fx:id="cvvEntry" prefWidth="44.0" text="CVV" />
-                  <TableColumn fx:id="nameEntry" prefWidth="125.0" text="Name" />
-               </columns>
-            </TableView>
-            <TextField fx:id="expirationLoader" layoutX="46.0" layoutY="42.0" prefHeight="25.0" prefWidth="170.0" />
-            <Text layoutX="95.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="cvvLoader" layoutX="46.0" layoutY="133.0" prefHeight="25.0" prefWidth="170.0" />
-            <TextField fx:id="nameLoader" layoutX="46.0" layoutY="230.0" prefHeight="25.0" prefWidth="170.0" />
-            <Text layoutX="115.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="109.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Button fx:id="paymentInformationInputButton" layoutX="87.0" layoutY="281.0" mnemonicParsing="false" onAction="#loadPaymentInformationInputs" prefHeight="35.0" prefWidth="88.0" text="Input" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="530.0" prefWidth="670.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="schoolProject.PaymentInformationScreenController">
+
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0"
+                    style="-fx-background-color: transparent;">
+            <children>
+                <Label layoutX="509.0" layoutY="-16.0"
+                       prefHeight="104.0" prefWidth="153.0"
+                       text="PARKIFY" textFill="#60a5fa">
+                    <font>
+                        <Font name="Javanese Text" size="34.0"/>
+                    </font>
+                </Label>
+
+                <Label layoutX="129.0" layoutY="47.0"
+                       prefHeight="70.0" prefWidth="412.0"
+                       text="Payment Information" textFill="#f8fafc">
+                    <font>
+                        <Font name="Lucida Fax Regular" size="38.0"/>
+                    </font>
+                </Label>
+
+                <Button fx:id="paymentInformationBack"
+                        layoutX="14.0" layoutY="14.0"
+                        prefHeight="43.0" prefWidth="69.0"
+                        text="Back"
+                        onAction="#switchToMyProfileScreen"
+                        style="-fx-background-color: #2563eb;
+                               -fx-text-fill: white;
+                               -fx-background-radius: 8;
+                               -fx-border-color: #60a5fa;
+                               -fx-border-radius: 8;"/>
+
+                <Text layoutX="84.0" layoutY="141.0"
+                      text="Card Number:" fill="#f8fafc">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Text>
+
+                <TextField fx:id="cardNumberLoader"
+                           layoutX="45.0" layoutY="147.0"
+                           prefHeight="25.0" prefWidth="170.0"
+                           style="-fx-background-color: #1e293b;
+                                  -fx-text-fill: white;
+                                  -fx-prompt-text-fill: #94a3b8;
+                                  -fx-border-color: #475569;
+                                  -fx-border-radius: 5;
+                                  -fx-background-radius: 5;"/>
+            </children>
+        </AnchorPane>
+
+        <AnchorPane prefHeight="330.0" prefWidth="670.0"
+                    style="-fx-background-color: transparent;">
+            <children>
+                <TableView layoutX="246.0" layoutY="-78.0"
+                           prefHeight="381.0" prefWidth="403.0"
+                           style="-fx-background-color: #172437;
+                                  -fx-border-color: #334155;">
+                    <columns>
+                        <TableColumn fx:id="cardNumberEntry"
+                                     prefWidth="169.0"
+                                     text="Card Number"/>
+                        <TableColumn fx:id="expirationEntry"
+                                     prefWidth="64.0"
+                                     text="Expiration"/>
+                        <TableColumn fx:id="cvvEntry"
+                                     prefWidth="44.0"
+                                     text="CVV"/>
+                        <TableColumn fx:id="nameEntry"
+                                     prefWidth="125.0"
+                                     text="Name"/>
+                    </columns>
+                </TableView>
+
+                <TextField fx:id="expirationLoader"
+                           layoutX="46.0" layoutY="42.0"
+                           prefHeight="25.0" prefWidth="170.0"
+                           style="-fx-background-color: #1e293b;
+                                  -fx-text-fill: white;
+                                  -fx-border-color: #475569;
+                                  -fx-border-radius: 5;
+                                  -fx-background-radius: 5;"/>
+
+                <Text layoutX="95.0" layoutY="37.0"
+                      text="Expiration:" fill="#f8fafc">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Text>
+
+                <TextField fx:id="cvvLoader"
+                           layoutX="46.0" layoutY="133.0"
+                           prefHeight="25.0" prefWidth="170.0"
+                           style="-fx-background-color: #1e293b;
+                                  -fx-text-fill: white;
+                                  -fx-border-color: #475569;
+                                  -fx-border-radius: 5;
+                                  -fx-background-radius: 5;"/>
+
+                <TextField fx:id="nameLoader"
+                           layoutX="46.0" layoutY="230.0"
+                           prefHeight="25.0" prefWidth="170.0"
+                           style="-fx-background-color: #1e293b;
+                                  -fx-text-fill: white;
+                                  -fx-border-color: #475569;
+                                  -fx-border-radius: 5;
+                                  -fx-background-radius: 5;"/>
+
+                <Text layoutX="115.0" layoutY="128.0"
+                      text="CVV:" fill="#f8fafc">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Text>
+
+                <Text layoutX="109.0" layoutY="225.0"
+                      text="Name:" fill="#f8fafc">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Text>
+
+                <Button fx:id="paymentInformationInputButton"
+                        layoutX="87.0" layoutY="281.0"
+                        prefHeight="35.0" prefWidth="88.0"
+                        text="Input"
+                        onAction="#loadPaymentInformationInputs"
+                        style="-fx-background-color: #2563eb;
+                               -fx-text-fill: white;
+                               -fx-background-radius: 8;
+                               -fx-border-color: #60a5fa;
+                               -fx-border-radius: 8;
+                               -fx-cursor: hand;">
+                    <font>
+                        <Font name="System Bold" size="16.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>

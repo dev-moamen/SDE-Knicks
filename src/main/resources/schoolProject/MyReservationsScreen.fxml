@@ -1,46 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.control.TableColumn?>
+        <?import javafx.scene.control.TableView?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.MyReservationsScreenController">
-   <children>
-      <AnchorPane>
-         <children>
-            <Label layoutX="509.0" layoutY="-12.0" prefHeight="104.0" prefWidth="153.0" text="PARKIFY">
-               <font>
-                  <Font name="Javanese Text" size="34.0" />
-               </font>
-            </Label>
-            <Label layoutX="94.0" layoutY="72.0" text="My Reservations">
-               <font>
-                  <Font name="Lucida Fax Regular" size="58.0" />
-               </font>
-            </Label>
-            <Button fx:id="myReservationsBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomeScreen" prefHeight="43.0" prefWidth="69.0" text="Back" />
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <TableView layoutX="27.0" layoutY="-13.0" prefHeight="315.0" prefWidth="616.0">
-              <columns>
-                <TableColumn prefWidth="139.9999942779541" text="Arrival Time" />
-                <TableColumn prefWidth="144.66664123535156" text="Departure Time" />
-                  <TableColumn prefWidth="101.3333740234375" text="Parking Spot" />
-                  <TableColumn prefWidth="125.33328247070312" text="License Plate" />
-                  <TableColumn prefWidth="104.0" text="Cost" />
-              </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </children>
+<VBox alignment="CENTER" prefHeight="530.0" prefWidth="670.0" spacing="15.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #101827, #243447);"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="schoolProject.MyReservationsScreenController">
+
+    <padding>
+        <Insets top="15.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <children>
+        <AnchorPane prefHeight="100.0" minHeight="100.0" prefWidth="630.0">
+            <children>
+                <Button fx:id="myReservationsBack"
+                        layoutX="0.0" layoutY="10.0"
+                        mnemonicParsing="false"
+                        onAction="#switchToHomeScreen"
+                        prefHeight="43.0" prefWidth="80.0"
+                        text="Back"
+                        style="-fx-background-color: #34465e; -fx-text-fill: white; -fx-background-radius: 12; -fx-cursor: hand; -fx-font-size: 14px;"/>
+
+                <Label layoutX="95.0" layoutY="0.0"
+                       prefHeight="90.0" prefWidth="430.0"
+                       alignment="CENTER"
+                       text="MY RESERVATIONS"
+                       textFill="#f1f5f9">
+                    <font>
+                        <Font name="Lucida Fax Regular" size="32.0"/>
+                    </font>
+                </Label>
+
+                <Label layoutX="530.0" layoutY="15.0"
+                       prefHeight="50.0" prefWidth="100.0"
+                       text="PARKIFY"
+                       textFill="#94a3b8">
+                    <font>
+                        <Font name="Javanese Text" size="22.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <TableView fx:id="reservationsTable"
+                   prefHeight="315.0" prefWidth="630.0"
+                   style="-fx-background-color: #1e293b; -fx-background-radius: 12; -fx-border-color: #475569; -fx-border-radius: 12; -fx-border-width: 1.5;">
+            <columns>
+                <TableColumn prefWidth="125.0" text="Arrival Time"/>
+                <TableColumn prefWidth="130.0" text="Departure Time"/>
+                <TableColumn prefWidth="105.0" text="Parking Spot"/>
+                <TableColumn prefWidth="145.0" text="License Plate"/>
+                <TableColumn prefWidth="100.0" text="Cost"/>
+            </columns>
+        </TableView>
+    </children>
 </VBox>
