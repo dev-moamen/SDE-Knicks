@@ -40,6 +40,11 @@ nbbuild/
 nbdist/
 dist/
 nbactions.xml
+.zed/
+
+# direnv
+.envrc
+
 # NetBeans specific
 /.nb-gradle/
 
