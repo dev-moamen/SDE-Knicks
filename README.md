@@ -1,5 +1,7 @@
 # Parkify
 
+Trello: https://trello.com/b/AGC5XbAc/knicks-parker
+
 JavaFX parking app. 800×800 window, shared navy/teal theme (`app.css`).
 
 **Team:** Moamen Fahmy, Omar Khodir, Matyas Grof-Tisza
