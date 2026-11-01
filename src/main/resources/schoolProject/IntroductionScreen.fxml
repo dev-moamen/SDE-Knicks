@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -19,13 +19,13 @@
                 </ImageView>
                 <Label styleClass="subtitle" text="Find parking, effortlessly" />
                 <Button fx:id="getStarted" mnemonicParsing="false" onAction="#switchToHomeScreen" styleClass="btn, btn-primary" text="Get Started" />
-            <AnchorPane prefHeight="176.0" prefWidth="800.0" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="admin" layoutX="726.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="32.0" prefWidth="60.0" text="Admin" />
-               </children>
-            </AnchorPane>
             </children>
         </VBox>
+        <Button fx:id="admin" mnemonicParsing="false" onAction="#switchToAdminScreen"
+                styleClass="btn, btn-back" text="Admin" StackPane.alignment="BOTTOM_RIGHT">
+            <StackPane.margin>
+                <Insets bottom="24.0" right="24.0" />
+            </StackPane.margin>
+        </Button>
     </children>
 </StackPane>

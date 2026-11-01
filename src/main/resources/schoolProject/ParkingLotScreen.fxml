@@ -34,6 +34,8 @@
             <children>
                 <VBox styleClass="card">
                     <children>
+                        <Label styleClass="eyebrow" text="SELECT A PARKING SPACE"/>
+                        <Label styleClass="section-title" text="Available spaces"/>
                         <GridPane alignment="CENTER" hgap="22.0" vgap="18.0">
                             <columnConstraints>
                                 <ColumnConstraints halignment="CENTER" minWidth="40.0"/>

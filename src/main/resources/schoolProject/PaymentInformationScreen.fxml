@@ -31,6 +31,10 @@
     <center>
         <VBox styleClass="content">
             <children>
+                <VBox styleClass="page-intro">
+                    <Label styleClass="eyebrow" text="BILLING"/>
+                    <Label styleClass="subtitle" text="Add or review the payment card saved to your account."/>
+                </VBox>
                 <HBox alignment="CENTER" spacing="20.0">
                     <children>
                         <VBox styleClass="form-card" prefWidth="240.0">

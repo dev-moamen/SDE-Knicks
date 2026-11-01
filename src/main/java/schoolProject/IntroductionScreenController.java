@@ -16,4 +16,9 @@ public class IntroductionScreenController {
         App.setRoot("HomeScreen");
     }
 
+    @FXML
+    void switchToAdminScreen(ActionEvent event) throws IOException {
+        App.setRoot("AdminScreen");
+    }
+
 }

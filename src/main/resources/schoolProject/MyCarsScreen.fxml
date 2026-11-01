@@ -31,6 +31,10 @@
     <center>
         <VBox styleClass="content">
             <children>
+                <VBox styleClass="page-intro">
+                    <Label styleClass="eyebrow" text="YOUR VEHICLES"/>
+                    <Label styleClass="subtitle" text="Add a car or review the vehicles saved to your account."/>
+                </VBox>
                 <HBox alignment="CENTER" spacing="24.0">
                     <children>
                         <VBox styleClass="form-card" prefWidth="250.0">

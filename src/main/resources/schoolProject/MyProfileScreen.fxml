@@ -30,6 +30,8 @@
             <children>
                 <VBox styleClass="card">
                     <children>
+                        <Label styleClass="eyebrow" text="ACCOUNT"/>
+                        <Label styleClass="section-title" text="Manage your profile"/>
                         <Label styleClass="subtitle" text="Manage your account details"/>
                         <Button fx:id="myCars"
                                 mnemonicParsing="false"

@@ -206,3 +206,34 @@
 .spot:hover {
     -fx-fill: #2dd4bf;
 }
+
+
+
+.eyebrow {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5eead4;
+    -fx-letter-spacing: 1.2px;
+}
+
+.section-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f8fafc;
+}
+
+.page-intro {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 6;
+    -fx-padding: 0 0 8 0;
+}
+
+/* NEW: Highlight the main action on the Home screen without changing other buttons. */
+.btn-nav-primary {
+    -fx-background-color: #14b8a6;
+    -fx-text-fill: #0b1220;
+}
+
+.btn-nav-primary:hover {
+    -fx-background-color: #5eead4;
+}

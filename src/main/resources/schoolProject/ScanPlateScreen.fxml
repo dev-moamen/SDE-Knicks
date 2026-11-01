@@ -7,13 +7,13 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.ScanPlateScreenController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.ScanPlateScreenController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label layoutX="186.0" layoutY="52.0" text="Scan Plate">
+            <Label layoutX="240.0" layoutY="52.0" prefWidth="320.0" alignment="CENTER" styleClass="title" text="Scan License Plate">
                <font>
-                  <Font size="66.0" />
+                  <Font size="38.0" />
                </font>
             </Label>
             <Button fx:id="scanPlateBack" layoutX="11.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="39.0" prefWidth="59.0" styleClass="btn, btn-back" text="Back" />
@@ -21,9 +21,9 @@
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="uploadFile" layoutX="210.0" layoutY="70.0" mnemonicParsing="false" onAction="#uploadLicensePlateFile" prefHeight="59.0" prefWidth="250.0" text="Upload File">
+            <Button fx:id="uploadFile" layoutX="275.0" layoutY="70.0" mnemonicParsing="false" onAction="#uploadLicensePlateFile" prefHeight="52.0" prefWidth="250.0" styleClass="btn, btn-primary" text="Upload Image">
                <font>
-                  <Font size="28.0" />
+                  <Font size="18.0" />
                </font>
             </Button>
          </children>
