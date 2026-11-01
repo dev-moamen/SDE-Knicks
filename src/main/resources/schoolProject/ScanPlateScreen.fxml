@@ -16,6 +16,7 @@
                   <Font size="66.0" />
                </font>
             </Label>
+            <Button fx:id="scanPlateBack" layoutX="11.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="39.0" prefWidth="59.0" styleClass="btn, btn-back" text="Back" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
