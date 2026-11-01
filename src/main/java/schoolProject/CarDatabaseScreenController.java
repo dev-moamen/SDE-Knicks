@@ -3,8 +3,6 @@ package schoolProject;
 import java.io.IOException;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,9 +30,6 @@ public class CarDatabaseScreenController {
     @FXML
     private TableColumn<Car, String> colorEntry;
 
-    // the table's data, empty for now
-    private final ObservableList<Car> cars = FXCollections.observableArrayList();
-
     @FXML
     private void initialize() {
         licensePlateEntry.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getLicensePlate()));
@@ -43,7 +38,9 @@ public class CarDatabaseScreenController {
         colorEntry.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().getColor()));
 
         carsTable.setPlaceholder(new Label("No cars added yet"));
-        carsTable.setItems(cars);
+
+        // the same list the My Cars screen adds to
+        carsTable.setItems(MyCarsScreenController.cars);
     }
 
     @FXML

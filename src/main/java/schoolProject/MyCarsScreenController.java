@@ -1,6 +1,7 @@
 package schoolProject;
 
 import java.io.IOException;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +25,8 @@ public class MyCarsScreenController {
     @FXML private TableColumn<Car, String> modelEntry;
     @FXML private TableColumn<Car, String> colorEntry;
 
-    private final ObservableList<Car> cars = FXCollections.observableArrayList();
+    // static = one list for the whole app, so it is not wiped when the screen reloads
+    public static final ObservableList<Car> cars = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -67,24 +69,5 @@ public class MyCarsScreenController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
-
-    public static class Car {
-        private final String licensePlate;
-        private final String brand;
-        private final String model;
-        private final String color;
-
-        public Car(String licensePlate, String brand, String model, String color) {
-            this.licensePlate = licensePlate;
-            this.brand = brand;
-            this.model = model;
-            this.color = color;
-        }
-
-        public String getLicensePlate() { return licensePlate; }
-        public String getBrand() { return brand; }
-        public String getModel() { return model; }
-        public String getColor() { return color; }
     }
 }
