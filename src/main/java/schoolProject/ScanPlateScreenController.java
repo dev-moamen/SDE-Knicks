@@ -2,22 +2,14 @@ package schoolProject;
 
 import java.io.File;
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
 public class ScanPlateScreenController {
-
-    @FXML
-    private Button scanPlateBack;
-
-    @FXML
-    private Button uploadFile;
-
-    private File selectedImage;
-
     @FXML
     void switchToAdminScreen(ActionEvent event) throws IOException {
         App.setRoot("AdminScreen");
@@ -28,7 +20,17 @@ public class ScanPlateScreenController {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Choose an image");
         chooser.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg"));
-        selectedImage = chooser.showOpenDialog(uploadFile.getScene().getWindow());
+                new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg","*.bmp"));
+        Window window = ((Node) event.getSource()).getScene().getWindow();
+        File selectedFile = chooser.showOpenDialog(window);
+
+        if (selectedFile != null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Image Selected");
+            alert.setHeaderText("License plate image selected");
+            alert.setContentText("Selected file: " + selectedFile.getName()
+                    + "\nAutomatic plate recognition is not connected yet.");
+            alert.showAndWait();
+        }
     }
 }

@@ -1,24 +1,11 @@
 package schoolProject;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class AdminScreenController {
-
-    @FXML
-    private Button adminScreenBack;
-
-    @FXML
-    private Button scanPlate;
-
-    @FXML
-    private Button carDatabase;
-
-    @FXML
-    private Button paymentDatabase;
 
     @FXML
     void switchToIntroductionScreen(ActionEvent event) throws IOException {
