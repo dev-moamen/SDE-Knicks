@@ -39,7 +39,6 @@ public class CarDatabaseScreenController {
 
         carsTable.setPlaceholder(new Label("No cars added yet"));
 
-        // the same list the My Cars screen adds to
         carsTable.setItems(MyCarsScreenController.cars);
     }
 

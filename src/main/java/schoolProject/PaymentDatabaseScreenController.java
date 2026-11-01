@@ -32,7 +32,7 @@ public class PaymentDatabaseScreenController {
     @FXML
     private TableColumn<PaymentInfo, String> nameEntry;
 
-    // the table's data, empty for now
+    // empty for now
     private final ObservableList<PaymentInfo> payments = FXCollections.observableArrayList();
 
     @FXML

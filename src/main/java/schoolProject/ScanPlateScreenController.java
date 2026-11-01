@@ -16,7 +16,6 @@ public class ScanPlateScreenController {
     @FXML
     private Button uploadFile;
 
-    // the image the user picked
     private File selectedImage;
 
     @FXML

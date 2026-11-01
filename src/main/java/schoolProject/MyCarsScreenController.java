@@ -25,7 +25,6 @@ public class MyCarsScreenController {
     @FXML private TableColumn<Car, String> modelEntry;
     @FXML private TableColumn<Car, String> colorEntry;
 
-    // static = one list for the whole app, so it is not wiped when the screen reloads
     public static final ObservableList<Car> cars = FXCollections.observableArrayList();
 
     @FXML
