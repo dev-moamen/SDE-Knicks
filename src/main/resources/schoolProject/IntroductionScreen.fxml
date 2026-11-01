@@ -4,27 +4,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
-           xmlns="http://javafx.com/javafx/8"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="schoolProject.IntroductionScreenController">
+<StackPane prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.IntroductionScreenController">
     <children>
         <VBox alignment="CENTER" spacing="18.0" styleClass="content">
             <children>
                 <ImageView fitHeight="220.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@parkifyLogo.png"/>
+                        <Image url="@parkifyLogo.png" />
                     </image>
                 </ImageView>
-                <Label styleClass="subtitle" text="Find parking, effortlessly"/>
-                <Button fx:id="getStarted"
-                        mnemonicParsing="false"
-                        onAction="#switchToHomeScreen"
-                        styleClass="btn, btn-primary"
-                        text="Get Started"/>
+                <Label styleClass="subtitle" text="Find parking, effortlessly" />
+                <Button fx:id="getStarted" mnemonicParsing="false" onAction="#switchToHomeScreen" styleClass="btn, btn-primary" text="Get Started" />
+            <AnchorPane prefHeight="176.0" prefWidth="800.0" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="admin" layoutX="726.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="32.0" prefWidth="60.0" text="Admin" />
+               </children>
+            </AnchorPane>
             </children>
         </VBox>
     </children>
