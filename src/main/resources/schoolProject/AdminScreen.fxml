@@ -7,13 +7,13 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.AdminScreenController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.AdminScreenController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label layoutX="180.0" layoutY="63.0" prefHeight="73.0" prefWidth="309.0" text="Admin Access" textAlignment="CENTER">
+            <Label layoutX="220.0" layoutY="63.0" prefHeight="73.0" prefWidth="360.0" styleClass="title" text="Admin Dashboard" textAlignment="CENTER">
                <font>
-                  <Font size="50.0" />
+                  <Font size="38.0" />
                </font>
             </Label>
             <Button fx:id="adminScreenBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToIntroductionScreen" prefHeight="32.0" prefWidth="50.0" styleClass="btn, btn-back" text="Back" />
@@ -21,17 +21,17 @@
       </AnchorPane>
       <AnchorPane prefHeight="307.0" prefWidth="670.0">
          <children>
-            <Button fx:id="scanPlate" layoutX="229.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToScanPlateScreen" prefHeight="47.0" prefWidth="211.0" text="Scan Plate">
+            <Button fx:id="scanPlate" layoutX="294.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToScanPlateScreen" prefHeight="52.0" prefWidth="212.0" styleClass="btn, btn-nav" text="Scan Plate">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="carDatabase" layoutX="229.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToCarDatabaseScreen" prefHeight="47.0" prefWidth="211.0" text="Car Database">
+            <Button fx:id="carDatabase" layoutX="294.0" layoutY="112.0" mnemonicParsing="false" onAction="#switchToCarDatabaseScreen" prefHeight="52.0" prefWidth="212.0" styleClass="btn, btn-nav" text="Car Database">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="paymentDatabase" layoutX="230.0" layoutY="227.0" mnemonicParsing="false" onAction="#switchToPaymentDatabaseScreen" text="Payment Database">
+            <Button fx:id="paymentDatabase" layoutX="294.0" layoutY="210.0" mnemonicParsing="false" onAction="#switchToPaymentDatabaseScreen" prefHeight="52.0" prefWidth="212.0" styleClass="btn, btn-nav" text="Payment Database">
                <font>
                   <Font size="22.0" />
                </font>

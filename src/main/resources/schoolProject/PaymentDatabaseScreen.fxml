@@ -9,26 +9,26 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.PaymentDatabaseScreenController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.PaymentDatabaseScreenController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="150.0" prefWidth="200.0">
          <children>
-            <Label layoutX="99.0" layoutY="43.0" text="Payment Information Database">
+            <Label layoutX="170.0" layoutY="43.0" prefWidth="460.0" alignment="CENTER" styleClass="title" text="Payment Database">
                <font>
-                  <Font size="38.0" />
+                  <Font size="34.0" />
                </font>
             </Label>
             <Button fx:id="paymentDatabaseBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="37.0" prefWidth="59.0" styleClass="btn, btn-back" text="Back" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="385.0" prefWidth="600.0">
+      <AnchorPane prefHeight="600.0" prefWidth="600.0">
          <children>
-            <TableView fx:id="paymentTable" layoutX="8.0" layoutY="-42.0" prefHeight="385.0" prefWidth="653.0">
+            <TableView fx:id="paymentTable" layoutX="35.0" layoutY="0.0" prefHeight="520.0" prefWidth="730.0">
                <columns>
                   <TableColumn fx:id="cardNumberEntry" prefWidth="245.33335399627686" text="Card Number" />
                   <TableColumn fx:id="expirationEntry" prefWidth="113.33334350585938" text="Expiration" />
                   <TableColumn fx:id="cvvEntry" prefWidth="84.66668701171875" text="CVV" />
-                  <TableColumn fx:id="nameEntry" prefWidth="209.33328247070312" text="Name" />
+                  <TableColumn fx:id="nameEntry" prefWidth="240.0" text="Name" />
                </columns>
             </TableView>
          </children>

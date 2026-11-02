@@ -30,6 +30,10 @@
     <center>
         <VBox styleClass="content">
             <children>
+                <VBox styleClass="page-intro">
+                    <Label styleClass="eyebrow" text="PARKING ACTIVITY"/>
+                    <Label styleClass="subtitle" text="Review your past and upcoming parking sessions."/>
+                </VBox>
                 <TableView fx:id="reservationsTable" prefHeight="560.0" prefWidth="720.0" maxWidth="720.0">
                     <columns>
                         <TableColumn prefWidth="145.0" text="Arrival Time"/>

@@ -30,7 +30,9 @@
             <children>
                 <VBox styleClass="card">
                     <children>
-                        <Label styleClass="subtitle" text="What would you like to do?"/>
+                        <Label styleClass="eyebrow" text="WELCOME TO PARKIFY"/>
+                        <Label styleClass="section-title" text="Where would you like to go?"/>
+                        <Label styleClass="subtitle" text="Manage your vehicles, find a space, and keep track of your visits." wrapText="true" maxWidth="390.0"/>
                         <Button fx:id="myProfile"
                                 mnemonicParsing="false"
                                 onAction="#switchToMyProfileScreen"
@@ -39,8 +41,8 @@
                         <Button fx:id="parkingLot"
                                 mnemonicParsing="false"
                                 onAction="#switchToParkingLotScreen"
-                                styleClass="btn, btn-nav"
-                                text="Parking Lot"/>
+                                styleClass="btn, btn-nav, btn-nav-primary"
+                                text="Find a parking space"/>
                         <Button fx:id="myReservations"
                                 mnemonicParsing="false"
                                 onAction="#switchToMyReservationsScreen"

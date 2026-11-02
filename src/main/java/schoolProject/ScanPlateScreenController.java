@@ -9,7 +9,9 @@ import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 
+// NEW: Provides the file picker for selecting a license plate image.
 public class ScanPlateScreenController {
+
     @FXML
     void switchToAdminScreen(ActionEvent event) throws IOException {
         App.setRoot("AdminScreen");
@@ -18,9 +20,11 @@ public class ScanPlateScreenController {
     @FXML
     void uploadLicensePlateFile(ActionEvent event) {
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Choose an image");
+        chooser.setTitle("Select License Plate Image");
         chooser.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg","*.bmp"));
+                new FileChooser.ExtensionFilter("Image Files", ".png", ".jpg", ".jpeg", ".bmp")
+        );
+
         Window window = ((Node) event.getSource()).getScene().getWindow();
         File selectedFile = chooser.showOpenDialog(window);
 
