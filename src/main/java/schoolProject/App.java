@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import org.h2.tools.Server;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,26 +17,18 @@ import java.sql.SQLException;
 public class App extends Application {
 
     private static Scene scene;
-    private Server h2WebServer;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        try {
-            // Start the H2 web console
-            h2WebServer = Server.createWebServer(
-                    "-web",
-                    "-webAllowOthers",
-                    "-webPort", "8082"
-            ).start();
+    public void start(Stage stage) throws IOException, SQLException {
+        startDatabase();
 
-            System.out.println("H2 Console: http://localhost:8082");
+        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-            // Initialize the database
-            Database.createTable();
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Could not start H2 Console", e);
-        }
+        System.out.println("Open your browser and navigate to http://localhost:8082/");
+        System.out.println("JDBC URL: jdbc:h2:file:~/h2_db/parkify_db");
+        System.out.println("User Name: sa");
+        System.out.println("Password: ");
 
         scene = new Scene(loadFXML("IntroductionScreen"), 800, 800);
         scene.getStylesheets().add(
@@ -45,13 +40,6 @@ public class App extends Application {
         stage.show();
     }
 
-    @Override
-    public void stop() {
-        if (h2WebServer != null) {
-            h2WebServer.stop();
-        }
-    }
-
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
@@ -60,6 +48,10 @@ public class App extends Application {
         FXMLLoader fxmlLoader =
                 new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
+    }
+
+    private static void startDatabase() throws SQLException {
+        new Server().runTool("-tcp", "-web", "-ifNotExists");
     }
 
     public static void main(String[] args) {

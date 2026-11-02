@@ -1,4 +1,5 @@
 module schoolProject {
+    requires java.persistence;
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
