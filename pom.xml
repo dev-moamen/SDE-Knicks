@@ -50,6 +50,11 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>schoolProject.App</mainClass>
+                            <!-- Hide logging info from console for now - investigate later, comment the options here -->
+                            <options>
+                                <option>-Dorg.jboss.logging.provider=jdk</option>
+                                <option>-Djava.util.logging.config.file=logging.properties</option>
+                            </options>
                         </configuration>
                     </execution>
                     <execution>
