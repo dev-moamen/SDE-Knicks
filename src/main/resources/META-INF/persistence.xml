@@ -7,7 +7,7 @@
     <persistence-unit name="br.com.fredericci.pu">
         <description>Hibernate EntityManager Demo</description>
         <!-- Classes go here -->
-        <!-- <class>hu.unideb.inf.Customer</class> -->
+        <class>schoolProject.Models.Customer</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
