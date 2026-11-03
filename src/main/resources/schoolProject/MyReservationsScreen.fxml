@@ -12,7 +12,7 @@
 <BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="schoolProject.MyReservationsScreenController">
+            fx:controller="schoolProject.Controllers.MyReservationsScreenController">
     <top>
         <HBox styleClass="header">
             <children>

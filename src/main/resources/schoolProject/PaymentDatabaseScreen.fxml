@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.PaymentDatabaseScreenController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.Controllers.PaymentDatabaseScreenController">
    <children>
       <AnchorPane prefHeight="150.0" prefWidth="200.0">
          <children>

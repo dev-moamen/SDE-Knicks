@@ -1,8 +1,9 @@
-package schoolProject;
+package schoolProject.Controllers;
 
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import schoolProject.App;
 
 public class AdminScreenController {
 

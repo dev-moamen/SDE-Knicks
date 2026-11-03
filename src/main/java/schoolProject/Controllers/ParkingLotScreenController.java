@@ -1,10 +1,11 @@
-package schoolProject;
+package schoolProject.Controllers;
 
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.shape.Rectangle;
+import schoolProject.App;
 
 public class ParkingLotScreenController {
 

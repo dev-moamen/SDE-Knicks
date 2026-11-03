@@ -1,4 +1,4 @@
-package schoolProject;
+package schoolProject.Controllers;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
+import schoolProject.App;
 
 // NEW: Provides the file picker for selecting a license plate image.
 public class ScanPlateScreenController {

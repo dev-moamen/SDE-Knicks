@@ -1,10 +1,11 @@
-package schoolProject;
+package schoolProject.Controllers;
 
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import schoolProject.App;
 
 public class IntroductionScreenController {
 
