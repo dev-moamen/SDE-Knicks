@@ -9,11 +9,15 @@ import java.util.logging.Logger;
 
 public class App {
 
-    public static void main(String[] args) throws SQLException{
-
-        // Hide logging info from console for now - investigate later, comment the options in pom
+    // Hide logging info from console for now - investigate later, comment the options in pom
+    public static void hideConsoleInfo() {
         Logger.getLogger("org.hibernate").setLevel(Level.WARNING);
         Logger.getLogger("org.jboss.logging").setLevel(Level.WARNING);
+    }
+
+    public static void main(String[] args) throws SQLException{
+
+        App.hideConsoleInfo();
 
         H2DB.initializeDB();
 
