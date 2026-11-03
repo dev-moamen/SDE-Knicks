@@ -8,14 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-import schoolProject.App;
+import schoolProject.JavaFX;
 
 // NEW: Provides the file picker for selecting a license plate image.
 public class ScanPlateScreenController {
 
     @FXML
     void switchToAdminScreen(ActionEvent event) throws IOException {
-        App.setRoot("AdminScreen");
+        JavaFX.setRoot("AdminScreen");
     }
 
     @FXML

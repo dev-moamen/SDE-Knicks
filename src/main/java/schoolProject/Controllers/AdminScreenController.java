@@ -3,27 +3,27 @@ package schoolProject.Controllers;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import schoolProject.App;
+import schoolProject.JavaFX;
 
 public class AdminScreenController {
 
     @FXML
     void switchToIntroductionScreen(ActionEvent event) throws IOException {
-        App.setRoot("IntroductionScreen");
+        JavaFX.setRoot("IntroductionScreen");
     }
 
     @FXML
     void switchToScanPlateScreen(ActionEvent event) throws IOException {
-        App.setRoot("ScanPlateScreen");
+        JavaFX.setRoot("ScanPlateScreen");
     }
 
     @FXML
     void switchToCarDatabaseScreen(ActionEvent event) throws IOException {
-        App.setRoot("CarDatabaseScreen");
+        JavaFX.setRoot("CarDatabaseScreen");
     }
 
     @FXML
     void switchToPaymentDatabaseScreen(ActionEvent event) throws IOException {
-        App.setRoot("PaymentDatabaseScreen");
+        JavaFX.setRoot("PaymentDatabaseScreen");
     }
 }

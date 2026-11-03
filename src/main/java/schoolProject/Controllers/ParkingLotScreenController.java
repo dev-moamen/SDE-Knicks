@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.shape.Rectangle;
-import schoolProject.App;
+import schoolProject.JavaFX;
 
 public class ParkingLotScreenController {
 
@@ -20,7 +20,7 @@ public class ParkingLotScreenController {
 
     @FXML
     void switchToHomeScreen(ActionEvent event) throws IOException {
-        App.setRoot("HomeScreen");
+        JavaFX.setRoot("HomeScreen");
     }
 
     @FXML

@@ -10,7 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import schoolProject.App;
+import schoolProject.JavaFX;
 
 public class PaymentInformationScreenController {
 
@@ -46,7 +46,7 @@ public class PaymentInformationScreenController {
 
     @FXML
     void switchToMyProfileScreen(ActionEvent event) throws IOException {
-        App.setRoot("MyProfileScreen");
+        JavaFX.setRoot("MyProfileScreen");
     }
 
     @FXML
