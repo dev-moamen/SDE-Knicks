@@ -2,31 +2,36 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.Controllers.ScanPlateScreenController">
-   <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+<BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.Controllers.ScanPlateScreenController">
+   <top>
+      <HBox styleClass="header">
          <children>
-            <Label layoutX="240.0" layoutY="52.0" prefWidth="320.0" alignment="CENTER" styleClass="title" text="Scan License Plate">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Label>
-            <Button fx:id="scanPlateBack" layoutX="11.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="39.0" prefWidth="59.0" styleClass="btn, btn-back" text="Back" />
+            <Button fx:id="scanPlateBack" mnemonicParsing="false"
+                    onAction="#switchToAdminScreen" styleClass="btn, btn-back" text="Back"/>
+            <Label alignment="CENTER" maxWidth="Infinity" styleClass="title"
+                   text="Scan License Plate" HBox.hgrow="ALWAYS"/>
+            <Region styleClass="header-spacer"/>
          </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="uploadFile" layoutX="275.0" layoutY="70.0" mnemonicParsing="false" onAction="#uploadLicensePlateFile" prefHeight="52.0" prefWidth="250.0" styleClass="btn, btn-primary" text="Upload Image">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
-</VBox>
+      </HBox>
+   </top>
+   <center>
+      <VBox styleClass="content">
+         <VBox styleClass="card">
+            <children>
+               <Label styleClass="eyebrow" text="PLATE SCANNING"/>
+               <Label styleClass="section-title" text="Upload a license plate image."/>
+               <Button fx:id="uploadFile" mnemonicParsing="false"
+                       onAction="#uploadLicensePlateFile" styleClass="btn, btn-primary" text="Upload Image"/>
+            </children>
+         </VBox>
+      </VBox>
+   </center>
+</BorderPane>

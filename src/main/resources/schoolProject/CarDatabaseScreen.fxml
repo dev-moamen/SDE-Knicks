@@ -4,34 +4,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="screen" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="schoolProject.Controllers.CarDatabaseScreenController">
-   <children>
-      <AnchorPane prefHeight="150.0" prefWidth="221.0">
+<BorderPane styleClass="screen" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="schoolProject.Controllers.CarDatabaseScreenController">
+   <top>
+      <HBox styleClass="header">
          <children>
-            <Label alignment="CENTER" layoutX="220.0" layoutY="23.0" maxWidth="Infinity" prefHeight="70.0" prefWidth="360.0" styleClass="title" text="Car Database">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Label>
-            <Button fx:id="carDatabaseBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToAdminScreen" prefHeight="37.0" prefWidth="59.0" styleClass="btn, btn-back" text="Back" />
+            <Button fx:id="carDatabaseBack" mnemonicParsing="false"
+                    onAction="#switchToAdminScreen" styleClass="btn, btn-back" text="Back"/>
+            <Label alignment="CENTER" maxWidth="Infinity" styleClass="title"
+                   text="Car Database" HBox.hgrow="ALWAYS"/>
+            <Region styleClass="header-spacer"/>
          </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="600.0" prefWidth="670.0">
-         <children>
-            <TableView fx:id="carsTable" layoutX="35.0" layoutY="0.0" prefHeight="520.0" prefWidth="730.0">
-               <columns>
-                  <TableColumn fx:id="licensePlateEntry" prefWidth="185.33333778381348" text="License Plate" />
-                  <TableColumn fx:id="brandEntry" prefWidth="150.6666717529297" text="Brand" />
-                  <TableColumn fx:id="modelEntry" prefWidth="181.99990844726562" text="Model" />
-                  <TableColumn fx:id="colorEntry" prefWidth="160.0" text="Color" />
-               </columns>
-            </TableView>
-         </children>
-      </AnchorPane>
-   </children>
-</VBox>
+      </HBox>
+   </top>
+   <center>
+      <VBox styleClass="content">
+         <VBox styleClass="card">
+            <children>
+               <Label styleClass="eyebrow" text="VEHICLE REGISTRY"/>
+               <Label styleClass="section-title" text="Registered vehicles."/>
+               <TableView fx:id="carsTable" prefHeight="520.0" prefWidth="730.0">
+                  <columns>
+                     <TableColumn fx:id="licensePlateEntry" prefWidth="185.33333778381348" text="License Plate"/>
+                     <TableColumn fx:id="brandEntry" prefWidth="150.6666717529297" text="Brand"/>
+                     <TableColumn fx:id="modelEntry" prefWidth="181.99990844726562" text="Model"/>
+                     <TableColumn fx:id="colorEntry" prefWidth="160.0" text="Color"/>
+                  </columns>
+               </TableView>
+            </children>
+         </VBox>
+      </VBox>
+   </center>
+</BorderPane>
