@@ -6,6 +6,7 @@ module schoolProject {
     requires com.h2database;
     requires org.hibernate.orm.core;
     requires net.bytebuddy; 
+    requires transitive javafx.graphics;
 
     opens schoolProject to javafx.fxml;
     exports schoolProject;
