@@ -5,14 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import schoolProject.Knicks.Models.*;
-
 @SpringBootApplication
 public class KnicksApplication implements CommandLineRunner{
     @Autowired
-    public CustomerManager cutomerManager;
-    @Autowired
-    public CarManager carManager;
+    public H2DB h2db;
 
     public static void main(String[] args) {
 		SpringApplication.run(KnicksApplication.class, args);
@@ -20,7 +16,7 @@ public class KnicksApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-        cutomerManager.manageCustomers();
-        carManager.managerCars();
+        h2db.getCustomerManager().manageCustomers();
+        h2db.getCarManager().managerCars();
 	}
 }
