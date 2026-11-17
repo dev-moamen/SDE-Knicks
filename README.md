@@ -39,7 +39,7 @@ mvn test
 
 ## Project structure
 
-- `KnicksApplication` — application entry point and startup runner
+- `SpringInit` — application entry point and startup runner
 - `Models/Customer` — customer JPA entity
 - `Models/Car` — car JPA entity
 - `Models/Payment` — payment JPA entity
