@@ -8,7 +8,7 @@ import schoolProject.Knicks.Models.*;
 
 @Service
 @Getter
-@RequiredArgsConstructor
+@RequiredArgsConstructor // Autowires final objects
 public class H2DB {
     private final CustomerManager customerManager;
     private final CarManager carManager;
