@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import schoolProject.Knicks.JavaFX;
 import schoolProject.Knicks.Models.Payment;
+import schoolProject.Knicks.Models.PaymentManager;
 
 public class PaymentInformationScreenController {
 
@@ -104,6 +105,7 @@ public class PaymentInformationScreenController {
                 .cvv(Integer.parseInt(cvv))
                 .build();
 
+        JavaFX.getBean(PaymentManager.class).savePayment(payment);
         payments.add(payment);
 
         cardNumberLoader.clear();

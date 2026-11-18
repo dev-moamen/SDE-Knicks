@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import schoolProject.Knicks.JavaFX;
 import schoolProject.Knicks.Models.Car;
+import schoolProject.Knicks.Models.CarManager;
 
 public class MyCarsScreenController {
 
@@ -76,6 +77,7 @@ public class MyCarsScreenController {
                 .year(year)
                 .build();
 
+        JavaFX.getBean(CarManager.class).saveCar(car);
         cars.add(car);
 
         licensePlateLoader.clear();

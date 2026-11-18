@@ -14,4 +14,8 @@ public class PaymentManager {
             .build();
         paymentRepo.save(payment);
     }
+
+    public void savePayment(Payment payment) {
+        paymentRepo.save(payment);
+    }
 }

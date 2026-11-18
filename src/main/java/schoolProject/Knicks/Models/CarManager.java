@@ -10,8 +10,13 @@ public class CarManager {
 
     public void managerCars() {
         Car car = Car.builder()
+                .licensePlate("licensePlate")
                 .color("Red")
             .build();
+        carRepo.save(car);
+    }
+
+    public void saveCar(Car car) {
         carRepo.save(car);
     }
 }
