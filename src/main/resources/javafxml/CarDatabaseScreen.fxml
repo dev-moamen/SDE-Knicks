@@ -32,10 +32,11 @@
                <Label styleClass="section-title" text="Registered vehicles."/>
                <TableView fx:id="carsTable" prefHeight="520.0" prefWidth="730.0">
                   <columns>
-                     <TableColumn fx:id="licensePlateEntry" prefWidth="185.33333778381348" text="License Plate"/>
-                     <TableColumn fx:id="brandEntry" prefWidth="150.6666717529297" text="Brand"/>
-                     <TableColumn fx:id="modelEntry" prefWidth="181.99990844726562" text="Model"/>
-                     <TableColumn fx:id="colorEntry" prefWidth="160.0" text="Color"/>
+                     <TableColumn fx:id="licensePlateEntry" prefWidth="155.0" text="License Plate"/>
+                     <TableColumn fx:id="brandEntry" prefWidth="140.0" text="Manufacturer"/>
+                     <TableColumn fx:id="modelEntry" prefWidth="155.0" text="Model"/>
+                     <TableColumn fx:id="colorEntry" prefWidth="140.0" text="Color"/>
+                     <TableColumn fx:id="yearEntry" prefWidth="140.0" text="Year"/>
                   </columns>
                </TableView>
             </children>

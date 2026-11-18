@@ -32,10 +32,11 @@
                <Label styleClass="section-title" text="Registered payment cards."/>
                <TableView fx:id="paymentTable" prefHeight="520.0" prefWidth="730.0">
                   <columns>
-                     <TableColumn fx:id="cardNumberEntry" prefWidth="245.33335399627686" text="Card Number"/>
-                     <TableColumn fx:id="expirationEntry" prefWidth="113.33334350585938" text="Expiration"/>
-                     <TableColumn fx:id="cvvEntry" prefWidth="84.66668701171875" text="CVV"/>
-                     <TableColumn fx:id="nameEntry" prefWidth="240.0" text="Name"/>
+                     <TableColumn fx:id="cardNumberEntry" prefWidth="200.0" text="Card Number"/>
+                     <TableColumn fx:id="monthEntry" prefWidth="90.0" text="Month"/>
+                     <TableColumn fx:id="yearEntry" prefWidth="90.0" text="Year"/>
+                     <TableColumn fx:id="cvvEntry" prefWidth="90.0" text="CVV"/>
+                     <TableColumn fx:id="nameEntry" prefWidth="260.0" text="Name"/>
                   </columns>
                </TableView>
             </children>
