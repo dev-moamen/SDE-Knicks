@@ -13,6 +13,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import schoolProject.Knicks.JavaFX;
 import schoolProject.Knicks.Models.Car;
 import schoolProject.Knicks.Models.CarManager;
+import schoolProject.Knicks.Models.CarRepo;
+import schoolProject.Knicks.Models.Customer;
+import schoolProject.Knicks.Models.CurrentUser;
 
 public class MyCarsScreenController {
 
@@ -40,6 +43,15 @@ public class MyCarsScreenController {
         yearEntry.setCellValueFactory(new PropertyValueFactory<>("year"));
 
         carsTable.setItems(cars);
+        loadCars();
+    }
+
+    private void loadCars() {
+        Customer customer = JavaFX.getBean(CurrentUser.class).getCustomer();
+        if (customer == null) {
+            return;
+        }
+        cars.setAll(JavaFX.getBean(CarRepo.class).findByCustomerId(customer.getId()));
     }
 
     @FXML
@@ -61,6 +73,12 @@ public class MyCarsScreenController {
             return;
         }
 
+        Customer customer = JavaFX.getBean(CurrentUser.class).getCustomer();
+        if (customer == null) {
+            showAlert("No signed-in customer.");
+            return;
+        }
+
         int year;
         try {
             year = Integer.parseInt(yearText);
@@ -75,10 +93,11 @@ public class MyCarsScreenController {
                 .model(model)
                 .color(color)
                 .year(year)
+                .customer(customer)
                 .build();
 
         JavaFX.getBean(CarManager.class).saveCar(car);
-        cars.add(car);
+        loadCars();
 
         licensePlateLoader.clear();
         brandLoader.clear();

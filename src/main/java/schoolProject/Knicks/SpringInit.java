@@ -18,6 +18,7 @@ public class SpringInit implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
         Customer customer = h2db.getCustomerManager().manageCustomers();
+        h2db.getCurrentUser().setCustomer(customer);
         h2db.getCarManager().managerCars(customer);
         h2db.getPaymentManager().managerPayments(customer);
 	}

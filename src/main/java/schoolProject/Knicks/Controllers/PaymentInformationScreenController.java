@@ -11,8 +11,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import schoolProject.Knicks.JavaFX;
+import schoolProject.Knicks.Models.Customer;
+import schoolProject.Knicks.Models.CurrentUser;
 import schoolProject.Knicks.Models.Payment;
 import schoolProject.Knicks.Models.PaymentManager;
+import schoolProject.Knicks.Models.PaymentRepo;
 
 public class PaymentInformationScreenController {
 
@@ -47,6 +50,16 @@ public class PaymentInformationScreenController {
         if (paymentTable != null) {
             paymentTable.setItems(payments);
         }
+
+        loadPayments();
+    }
+
+    private void loadPayments() {
+        Customer customer = JavaFX.getBean(CurrentUser.class).getCustomer();
+        if (customer == null) {
+            return;
+        }
+        payments.setAll(JavaFX.getBean(PaymentRepo.class).findByCustomerId(customer.getId()));
     }
 
     @FXML
@@ -64,6 +77,12 @@ public class PaymentInformationScreenController {
         if (cardNumber.isEmpty() || expiration.isEmpty()
                 || cvv.isEmpty() || name.isEmpty()) {
             showAlert("Please fill in all fields.");
+            return;
+        }
+
+        Customer customer = JavaFX.getBean(CurrentUser.class).getCustomer();
+        if (customer == null) {
+            showAlert("No signed-in customer.");
             return;
         }
 
@@ -103,10 +122,11 @@ public class PaymentInformationScreenController {
                 .month(month)
                 .year(year)
                 .cvv(Integer.parseInt(cvv))
+                .customer(customer)
                 .build();
 
         JavaFX.getBean(PaymentManager.class).savePayment(payment);
-        payments.add(payment);
+        loadPayments();
 
         cardNumberLoader.clear();
         expirationLoader.clear();
