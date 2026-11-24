@@ -8,11 +8,13 @@ public class CustomerManager {
     @Autowired
     public CustomerRepo customerRepo;
 
-    public void manageCustomers() {
-        Customer customer = Customer.builder()
-       			.name("Lajos")
-       			.gender(Customer.GenderType.Gay)
-       		.build();
-        customerRepo.save(customer);
+    public Customer manageCustomers() {
+        return customerRepo.findAll().stream().findFirst().orElseGet(() -> {
+            Customer customer = Customer.builder()
+                    .name("Lajos")
+                    .gender(Customer.GenderType.Gay)
+                    .build();
+            return customerRepo.save(customer);
+        });
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import schoolProject.Knicks.Models.Customer;
 
 @SpringBootApplication
 public class SpringInit implements CommandLineRunner{
@@ -16,7 +17,8 @@ public class SpringInit implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-        h2db.getCustomerManager().manageCustomers();
-        h2db.getCarManager().managerCars();
+        Customer customer = h2db.getCustomerManager().manageCustomers();
+        h2db.getCarManager().managerCars(customer);
+        h2db.getPaymentManager().managerPayments(customer);
 	}
 }

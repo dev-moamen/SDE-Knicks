@@ -8,12 +8,13 @@ public class CarManager {
     @Autowired
     public CarRepo carRepo;
 
-    public void managerCars() {
+    public Car managerCars(Customer customer) {
         Car car = Car.builder()
                 .licensePlate("licensePlate")
                 .color("Red")
+                .customer(customer)
             .build();
-        carRepo.save(car);
+        return carRepo.save(car);
     }
 
     public void saveCar(Car car) {
