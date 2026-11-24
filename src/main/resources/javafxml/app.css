@@ -177,7 +177,7 @@
 }
 
 .table-view .placeholder .label {
-    -fx-text-fill: #64748b;
+    -fx-text-fill: #94a3b8;
 }
 
 .table-row-cell:selected {
@@ -236,4 +236,97 @@
 
 .btn-nav-primary:hover {
     -fx-background-color: #5eead4;
+}
+
+/* Admin customer lookup */
+.admin-card {
+    -fx-alignment: TOP_LEFT;
+    -fx-padding: 22 26 22 26;
+    -fx-spacing: 10;
+    -fx-pref-width: 720;
+    -fx-max-width: 720;
+}
+
+.admin-toolbar {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12;
+}
+
+.customer-picker {
+    -fx-background-color: #0f172a;
+    -fx-background-radius: 8;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+    -fx-pref-height: 38;
+    -fx-pref-width: 480;
+}
+
+.customer-picker:focused {
+    -fx-border-color: #14b8a6;
+}
+
+.customer-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f8fafc;
+    -fx-prompt-text-fill: #94a3b8;
+}
+
+.customer-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.customer-picker .arrow {
+    -fx-background-color: #5eead4;
+}
+
+.customer-picker .list-cell {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #e2e8f0;
+}
+
+.customer-picker .list-cell:filled:hover {
+    -fx-background-color: rgba(20, 184, 166, 0.22);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #0f172a;
+    -fx-border-color: #334155;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #e2e8f0;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(20, 184, 166, 0.28);
+    -fx-text-fill: #f8fafc;
+}
+
+.customer-summary {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+}
+
+.table-caption {
+    -fx-text-fill: #5eead4;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1.2px;
+}
+
+.btn-scan {
+    -fx-pref-width: 130;
+    -fx-background-color: transparent;
+    -fx-border-color: #14b8a6;
+    -fx-border-width: 1.2;
+    -fx-text-fill: #5eead4;
+}
+
+.btn-scan:hover {
+    -fx-background-color: rgba(20, 184, 166, 0.18);
+    -fx-text-fill: #99f6e4;
 }
