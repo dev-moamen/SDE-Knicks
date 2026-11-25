@@ -1,9 +1,13 @@
 package schoolProject.Knicks.Controllers;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,8 +29,14 @@ import schoolProject.Knicks.Models.Customer;
 import schoolProject.Knicks.Models.CustomerRepo;
 import schoolProject.Knicks.Models.Payment;
 import schoolProject.Knicks.Models.PaymentRepo;
+import schoolProject.Knicks.Models.PriceFormat;
+import schoolProject.Knicks.Models.Transaction;
+import schoolProject.Knicks.Models.TransactionRepo;
 
 public class AdminScreenController {
+
+    private static final DateTimeFormatter TRANSACTION_TIME =
+            DateTimeFormatter.ofPattern("MMM d, HH:mm");
 
     @FXML private ComboBox<Customer> customerPicker;
     @FXML private Label customerSummary;
@@ -42,15 +53,22 @@ public class AdminScreenController {
     @FXML private TableColumn<Payment, String> nameEntry;
     @FXML private TableColumn<Payment, String> expiryEntry;
 
+    @FXML private TableView<Transaction> transactionTable;
+    @FXML private TableColumn<Transaction, LocalDateTime> paidEntry;
+    @FXML private TableColumn<Transaction, String> spotEntry;
+    @FXML private TableColumn<Transaction, BigDecimal> amountEntry;
+
     private final ObservableList<Customer> allCustomers = FXCollections.observableArrayList();
     private final ObservableList<Car> cars = FXCollections.observableArrayList();
     private final ObservableList<Payment> payments = FXCollections.observableArrayList();
+    private final ObservableList<Transaction> transactions = FXCollections.observableArrayList();
     private FilteredList<Customer> filteredCustomers;
 
     @FXML
     public void initialize() {
         setupCarsTable();
         setupPaymentTable();
+        setupTransactionTable();
         setupCustomerPicker();
     }
 
@@ -74,6 +92,36 @@ public class AdminScreenController {
 
         paymentTable.setItems(payments);
         paymentTable.setPlaceholder(new Label("Select a customer to see their payment methods."));
+    }
+
+    private void setupTransactionTable() {
+        paidEntry.setCellValueFactory(cell ->
+                new ReadOnlyObjectWrapper<>(cell.getValue().getPaidAt()));
+        spotEntry.setCellValueFactory(cell -> new ReadOnlyStringWrapper(
+                cell.getValue().getReservation() == null
+                        || cell.getValue().getReservation().getSpot() == null
+                        ? ""
+                        : cell.getValue().getReservation().getSpot().getCode()));
+        amountEntry.setCellValueFactory(cell ->
+                new ReadOnlyObjectWrapper<>(cell.getValue().getAmount()));
+
+        paidEntry.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(LocalDateTime value, boolean empty) {
+                super.updateItem(value, empty);
+                setText(empty || value == null ? null : TRANSACTION_TIME.format(value));
+            }
+        });
+        amountEntry.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(BigDecimal value, boolean empty) {
+                super.updateItem(value, empty);
+                setText(empty || value == null ? null : PriceFormat.euro(value));
+            }
+        });
+
+        transactionTable.setItems(transactions);
+        transactionTable.setPlaceholder(new Label("Select a customer to see their transactions."));
     }
 
     private void setupCustomerPicker() {
@@ -149,17 +197,24 @@ public class AdminScreenController {
             customerSummary.setText("No customer selected");
             cars.clear();
             payments.clear();
+            transactions.clear();
             return;
         }
 
         cars.setAll(JavaFX.getBean(CarRepo.class).findByCustomerId(customer.getId()));
         payments.setAll(JavaFX.getBean(PaymentRepo.class).findByCustomerId(customer.getId()));
+        transactions.setAll(JavaFX.getBean(TransactionRepo.class)
+                .findByReservationCustomerIdOrderByPaidAtDesc(customer.getId()));
 
         int vehicleCount = cars.size();
         int paymentCount = payments.size();
+        int transactionCount = transactions.size();
         customerSummary.setText("Viewing " + displayName(customer)
                 + "  \u00b7  " + vehicleCount + (vehicleCount == 1 ? " vehicle" : " vehicles")
-                + "  \u00b7  " + paymentCount + (paymentCount == 1 ? " payment method" : " payment methods"));
+                + "  \u00b7  " + paymentCount
+                + (paymentCount == 1 ? " payment method" : " payment methods")
+                + "  \u00b7  " + transactionCount
+                + (transactionCount == 1 ? " transaction" : " transactions"));
     }
 
     private String displayName(Customer customer) {

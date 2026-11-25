@@ -32,7 +32,7 @@
                <Label styleClass="eyebrow" text="CUSTOMER LOOKUP"/>
                <Label styleClass="section-title" text="Find a customer."/>
                <Label styleClass="subtitle"
-                      text="Search the full customer database, then review their vehicles and payment methods."/>
+                      text="Search the full customer database, then review their vehicles, cards, and transactions."/>
                <HBox styleClass="admin-toolbar">
                   <children>
                      <ComboBox fx:id="customerPicker" styleClass="customer-picker"
@@ -46,7 +46,7 @@
                <Label fx:id="customerSummary" styleClass="customer-summary"
                       text="No customer selected"/>
                <Label styleClass="table-caption" text="VEHICLES"/>
-               <TableView fx:id="carsTable" styleClass="admin-table" prefHeight="175.0"
+               <TableView fx:id="carsTable" styleClass="admin-table" prefHeight="130.0"
                           prefWidth="656.0" maxWidth="Infinity" VBox.vgrow="ALWAYS">
                   <columns>
                      <TableColumn fx:id="licensePlateEntry" prefWidth="150.0" text="License Plate"/>
@@ -57,12 +57,21 @@
                   </columns>
                </TableView>
                <Label styleClass="table-caption" text="PAYMENT METHODS"/>
-               <TableView fx:id="paymentTable" styleClass="admin-table" prefHeight="175.0"
+               <TableView fx:id="paymentTable" styleClass="admin-table" prefHeight="110.0"
                           prefWidth="656.0" maxWidth="Infinity" VBox.vgrow="ALWAYS">
                   <columns>
                      <TableColumn fx:id="cardNumberEntry" prefWidth="220.0" text="Card"/>
                      <TableColumn fx:id="nameEntry" prefWidth="240.0" text="Cardholder"/>
                      <TableColumn fx:id="expiryEntry" prefWidth="120.0" text="Expiry"/>
+                  </columns>
+               </TableView>
+               <Label styleClass="table-caption" text="TRANSACTIONS"/>
+               <TableView fx:id="transactionTable" styleClass="admin-table" prefHeight="130.0"
+                          prefWidth="656.0" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="paidEntry" prefWidth="220.0" text="Paid"/>
+                     <TableColumn fx:id="spotEntry" prefWidth="216.0" text="Spot"/>
+                     <TableColumn fx:id="amountEntry" prefWidth="220.0" text="Amount"/>
                   </columns>
                </TableView>
             </children>

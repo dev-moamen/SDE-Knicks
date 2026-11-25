@@ -19,7 +19,7 @@ public class IntroductionScreenController {
 
     @FXML
     void switchToAdminScreen(ActionEvent event) throws IOException {
-        JavaFX.setRoot("/javafxml/AdminScreen");
+        JavaFX.setRoot("/javafxml/AdminLoginScreen");
     }
 
 }

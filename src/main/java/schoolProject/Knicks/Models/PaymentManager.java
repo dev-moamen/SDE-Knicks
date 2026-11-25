@@ -13,6 +13,8 @@ public class PaymentManager {
                 Payment.builder()
                         .number(1234512345123451L)
                         .name(customer.getName())
+                        .month(8)
+                        .year(2029)
                     .build());
 
         // The demo card may already exist from an earlier run; attach the owner.

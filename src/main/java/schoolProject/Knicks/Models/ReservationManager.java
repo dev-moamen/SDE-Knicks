@@ -15,6 +15,9 @@ public class ReservationManager {
     @Autowired
     public ReservationRepo reservationRepo;
 
+    @Autowired
+    public TransactionRepo transactionRepo;
+
     public Reservation createReservation(Customer customer, Car car, ParkingSpot spot,
                                          LocalDateTime arrivalTime, LocalDateTime departureTime) {
         Objects.requireNonNull(customer, "customer is required");
@@ -40,7 +43,17 @@ public class ReservationManager {
                 .departureTime(departureTime)
                 .cost(cost)
                 .build();
-        return reservationRepo.save(reservation);
+        Reservation saved = reservationRepo.save(reservation);
+        recordTransaction(saved);
+        return saved;
+    }
+
+    private void recordTransaction(Reservation reservation) {
+        transactionRepo.save(Transaction.builder()
+                .reservation(reservation)
+                .amount(reservation.getCost())
+                .paidAt(LocalDateTime.now())
+                .build());
     }
 
     public BigDecimal calculateCost(BigDecimal hourlyRate, LocalDateTime arrivalTime,
@@ -60,6 +73,10 @@ public class ReservationManager {
 
     public Reservation seedDemoReservation(Customer customer, Car car, ParkingSpot spot) {
         if (reservationRepo.count() > 0) {
+            // Older databases already have the demo booking; give it a transaction once.
+            if (transactionRepo.count() == 0) {
+                reservationRepo.findAll().stream().findFirst().ifPresent(this::recordTransaction);
+            }
             return null;
         }
 
