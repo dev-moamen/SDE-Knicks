@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @AllArgsConstructor
@@ -29,8 +31,9 @@ public class ParkingSpot {
     @Column(nullable = false, unique = true)
     String code;
 
-    @ManyToOne
-    @JoinColumn(name = "floor_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "floor_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     ParkingFloor floor;
 
     @Enumerated(EnumType.STRING)

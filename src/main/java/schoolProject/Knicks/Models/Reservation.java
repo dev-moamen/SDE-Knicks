@@ -13,6 +13,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @AllArgsConstructor
@@ -34,15 +36,18 @@ public class Reservation {
     @Column(precision = 10, scale = 2)
     BigDecimal cost;
 
-    @ManyToOne
-    @JoinColumn(name = "spot_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "spot_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     ParkingSpot spot;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     Customer customer;
 
-    @ManyToOne
-    @JoinColumn(name = "car_license_plate")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "car_license_plate", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     Car car;
 }
