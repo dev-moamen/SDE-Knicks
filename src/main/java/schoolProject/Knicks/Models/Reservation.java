@@ -34,8 +34,9 @@ public class Reservation {
     @Column(precision = 10, scale = 2)
     BigDecimal cost;
 
-    @Column(name = "spot_code")
-    String spot;
+    @ManyToOne
+    @JoinColumn(name = "spot_id")
+    ParkingSpot spot;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

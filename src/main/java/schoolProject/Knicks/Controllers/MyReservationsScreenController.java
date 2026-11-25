@@ -2,7 +2,6 @@ package schoolProject.Knicks.Controllers;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -16,8 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import schoolProject.Knicks.JavaFX;
+import schoolProject.Knicks.Models.PriceFormat;
 import schoolProject.Knicks.Models.CurrentUser;
 import schoolProject.Knicks.Models.Customer;
 import schoolProject.Knicks.Models.Reservation;
@@ -44,7 +43,8 @@ public class MyReservationsScreenController {
                 new ReadOnlyObjectWrapper<>(cell.getValue().getArrivalTime()));
         departureTimeEntry.setCellValueFactory(cell ->
                 new ReadOnlyObjectWrapper<>(cell.getValue().getDepartureTime()));
-        spotEntry.setCellValueFactory(new PropertyValueFactory<>("spot"));
+        spotEntry.setCellValueFactory(cell -> new ReadOnlyStringWrapper(
+                cell.getValue().getSpot() == null ? "" : cell.getValue().getSpot().getCode()));
         licensePlateEntry.setCellValueFactory(cell -> new ReadOnlyStringWrapper(
                 cell.getValue().getCar() == null ? "" : cell.getValue().getCar().getLicensePlate()));
         costEntry.setCellValueFactory(cell ->
@@ -83,9 +83,7 @@ public class MyReservationsScreenController {
             @Override
             protected void updateItem(BigDecimal value, boolean empty) {
                 super.updateItem(value, empty);
-                setText(empty || value == null
-                        ? null
-                        : value.setScale(2, RoundingMode.HALF_UP).toPlainString());
+                setText(empty || value == null ? null : PriceFormat.euro(value));
             }
         };
     }

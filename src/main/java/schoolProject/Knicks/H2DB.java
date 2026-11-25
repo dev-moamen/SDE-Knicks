@@ -14,5 +14,6 @@ public class H2DB {
     private final CarManager carManager;
     private final PaymentManager paymentManager;
     private final ReservationManager reservationManager;
+    private final ParkingSpotManager parkingSpotManager;
     private final CurrentUser currentUser;
 }

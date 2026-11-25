@@ -9,11 +9,19 @@ public class CarManager {
     public CarRepo carRepo;
 
     public Car managerCars(Customer customer) {
-        Car car = Car.builder()
-                .licensePlate("licensePlate")
-                .color("Red")
-                .customer(customer)
-            .build();
+        Car car = carRepo.findAll().stream().findFirst().orElseGet(() ->
+                Car.builder()
+                        .licensePlate("1-ABC-123")
+                        .manufacturer("Volkswagen")
+                        .model("Golf")
+                        .color("Red")
+                        .year(2019)
+                        .build());
+
+        // The demo car may already exist from an earlier run; attach the owner.
+        if (car.getCustomer() == null) {
+            car.setCustomer(customer);
+        }
         return carRepo.save(car);
     }
 
