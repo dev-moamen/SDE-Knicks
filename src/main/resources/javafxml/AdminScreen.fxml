@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -24,16 +27,44 @@
    </top>
    <center>
       <VBox styleClass="content">
-         <VBox styleClass="card">
+         <VBox styleClass="card, admin-card">
             <children>
-               <Label styleClass="eyebrow" text="ADMIN DASHBOARD"/>
-               <Label styleClass="section-title" text="Manage the parking system."/>
-               <Button fx:id="scanPlate" mnemonicParsing="false"
-                       onAction="#switchToScanPlateScreen" styleClass="btn, btn-nav" text="Scan Plate"/>
-               <Button fx:id="carDatabase" mnemonicParsing="false"
-                       onAction="#switchToCarDatabaseScreen" styleClass="btn, btn-nav" text="Car Database"/>
-               <Button fx:id="paymentDatabase" mnemonicParsing="false"
-                       onAction="#switchToPaymentDatabaseScreen" styleClass="btn, btn-nav" text="Payment Database"/>
+               <Label styleClass="eyebrow" text="CUSTOMER LOOKUP"/>
+               <Label styleClass="section-title" text="Find a customer."/>
+               <Label styleClass="subtitle"
+                      text="Search the full customer database, then review their vehicles and payment methods."/>
+               <HBox styleClass="admin-toolbar">
+                  <children>
+                     <ComboBox fx:id="customerPicker" styleClass="customer-picker"
+                               promptText="Search by name, email, or ID…" maxWidth="Infinity"
+                               HBox.hgrow="ALWAYS"/>
+                     <Button fx:id="scanPlate" mnemonicParsing="false"
+                             onAction="#switchToScanPlateScreen"
+                             styleClass="btn, btn-small, btn-scan" text="Scan Plate"/>
+                  </children>
+               </HBox>
+               <Label fx:id="customerSummary" styleClass="customer-summary"
+                      text="No customer selected"/>
+               <Label styleClass="table-caption" text="VEHICLES"/>
+               <TableView fx:id="carsTable" styleClass="admin-table" prefHeight="175.0"
+                          prefWidth="656.0" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="licensePlateEntry" prefWidth="150.0" text="License Plate"/>
+                     <TableColumn fx:id="brandEntry" prefWidth="140.0" text="Manufacturer"/>
+                     <TableColumn fx:id="modelEntry" prefWidth="150.0" text="Model"/>
+                     <TableColumn fx:id="colorEntry" prefWidth="110.0" text="Color"/>
+                     <TableColumn fx:id="yearEntry" prefWidth="90.0" text="Year"/>
+                  </columns>
+               </TableView>
+               <Label styleClass="table-caption" text="PAYMENT METHODS"/>
+               <TableView fx:id="paymentTable" styleClass="admin-table" prefHeight="175.0"
+                          prefWidth="656.0" maxWidth="Infinity" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="cardNumberEntry" prefWidth="220.0" text="Card"/>
+                     <TableColumn fx:id="nameEntry" prefWidth="240.0" text="Cardholder"/>
+                     <TableColumn fx:id="expiryEntry" prefWidth="120.0" text="Expiry"/>
+                  </columns>
+               </TableView>
             </children>
          </VBox>
       </VBox>

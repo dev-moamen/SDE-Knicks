@@ -56,10 +56,11 @@
                         </VBox>
                         <TableView fx:id="paymentTable" prefHeight="460.0" prefWidth="450.0">
                             <columns>
-                                <TableColumn fx:id="cardNumberEntry" prefWidth="160.0" text="Card Number"/>
-                                <TableColumn fx:id="expirationEntry" prefWidth="90.0" text="Expiration"/>
-                                <TableColumn fx:id="cvvEntry" prefWidth="60.0" text="CVV"/>
-                                <TableColumn fx:id="nameEntry" prefWidth="138.0" text="Name"/>
+                                <TableColumn fx:id="cardNumberEntry" prefWidth="140.0" text="Card Number"/>
+                                <TableColumn fx:id="monthEntry" prefWidth="65.0" text="Month"/>
+                                <TableColumn fx:id="yearEntry" prefWidth="65.0" text="Year"/>
+                                <TableColumn fx:id="cvvEntry" prefWidth="50.0" text="CVV"/>
+                                <TableColumn fx:id="nameEntry" prefWidth="110.0" text="Name"/>
                             </columns>
                         </TableView>
                     </children>

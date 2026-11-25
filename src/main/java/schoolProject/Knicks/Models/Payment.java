@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,4 +28,8 @@ public class Payment {
     @Column(name= "expiration year")
     int year;
     int cvv;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    Customer customer;
 }

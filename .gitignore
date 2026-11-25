@@ -44,7 +44,9 @@ nbactions.xml
 
 # direnv
 .envrc
+.envrc.d/
 PRODUCT.md
+CHECKLIST.md
 
 # NetBeans specific
 /.nb-gradle/

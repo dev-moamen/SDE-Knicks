@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 
 public class JavaFX extends Application{
     private static Scene scene;
-    private ConfigurableApplicationContext springContext;
+    private static ConfigurableApplicationContext springContext;
+
+    public static <T> T getBean(Class<T> type) { return springContext.getBean(type); }
 
 	@Override
 	public void start(Stage stage) throws IOException, SQLException {
